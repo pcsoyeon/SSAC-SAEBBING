@@ -12,4 +12,5 @@ enum URLConstant {
     
     static let searchURL = "https://api.unsplash.com/search/photos?query="
     static let photoListURL = baseURL + "/photos"
+    static let photoURL = baseURL + "/photos"
 }

@@ -22,8 +22,11 @@
 		929DA57E290126D200810B2A /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA57D290126D200810B2A /* NetworkResult.swift */; };
 		929DA5812901289D00810B2A /* PhotoListAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5802901289D00810B2A /* PhotoListAPIManager.swift */; };
 		929DA58429012A8700810B2A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA58329012A8700810B2A /* Photo.swift */; };
-		929DA5862901387500810B2A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5852901387500810B2A /* PhotoViewModel.swift */; };
+		929DA5862901387500810B2A /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5852901387500810B2A /* PhotoListViewModel.swift */; };
 		929DA589290138A100810B2A /* Obervable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA588290138A100810B2A /* Obervable.swift */; };
+		929DA59129013FA400810B2A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA59029013FA400810B2A /* PhotoViewModel.swift */; };
+		929DA59329013FDE00810B2A /* PhotoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA59229013FDE00810B2A /* PhotoAPIManager.swift */; };
+		929DA5952901437B00810B2A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5942901437B00810B2A /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +44,11 @@
 		929DA57D290126D200810B2A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		929DA5802901289D00810B2A /* PhotoListAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListAPIManager.swift; sourceTree = "<group>"; };
 		929DA58329012A8700810B2A /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		929DA5852901387500810B2A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		929DA5852901387500810B2A /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		929DA588290138A100810B2A /* Obervable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obervable.swift; sourceTree = "<group>"; };
+		929DA59029013FA400810B2A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		929DA59229013FDE00810B2A /* PhotoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPIManager.swift; sourceTree = "<group>"; };
+		929DA5942901437B00810B2A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +107,8 @@
 		929DA56A2901257A00810B2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				929DA58B29013E7300810B2A /* View */,
-				929DA58A29013E6600810B2A /* ViewModel */,
+				929DA58D29013F8400810B2A /* Photo */,
+				929DA58C29013F7400810B2A /* PhotoList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				929DA5802901289D00810B2A /* PhotoListAPIManager.swift */,
+				929DA59229013FDE00810B2A /* PhotoAPIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -164,7 +171,7 @@
 		929DA58A29013E6600810B2A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				929DA5852901387500810B2A /* PhotoViewModel.swift */,
+				929DA5852901387500810B2A /* PhotoListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -173,6 +180,40 @@
 			isa = PBXGroup;
 			children = (
 				929DA5592901248900810B2A /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		929DA58C29013F7400810B2A /* PhotoList */ = {
+			isa = PBXGroup;
+			children = (
+				929DA58B29013E7300810B2A /* View */,
+				929DA58A29013E6600810B2A /* ViewModel */,
+			);
+			path = PhotoList;
+			sourceTree = "<group>";
+		};
+		929DA58D29013F8400810B2A /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				929DA58F29013F9600810B2A /* View */,
+				929DA58E29013F8D00810B2A /* ViewModel */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		929DA58E29013F8D00810B2A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				929DA59029013FA400810B2A /* PhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		929DA58F29013F9600810B2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				929DA5942901437B00810B2A /* PhotoViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,15 +301,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				929DA58429012A8700810B2A /* Photo.swift in Sources */,
+				929DA59129013FA400810B2A /* PhotoViewModel.swift in Sources */,
 				929DA55A2901248900810B2A /* ViewController.swift in Sources */,
 				929DA589290138A100810B2A /* Obervable.swift in Sources */,
 				929DA57A290126B400810B2A /* URLConstant.swift in Sources */,
 				929DA5562901248900810B2A /* AppDelegate.swift in Sources */,
-				929DA5862901387500810B2A /* PhotoViewModel.swift in Sources */,
+				929DA5862901387500810B2A /* PhotoListViewModel.swift in Sources */,
 				929DA57E290126D200810B2A /* NetworkResult.swift in Sources */,
 				929DA5582901248900810B2A /* SceneDelegate.swift in Sources */,
 				929DA5812901289D00810B2A /* PhotoListAPIManager.swift in Sources */,
 				929DA57C290126BA00810B2A /* APIKey.swift in Sources */,
+				929DA59329013FDE00810B2A /* PhotoAPIManager.swift in Sources */,
+				929DA5952901437B00810B2A /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

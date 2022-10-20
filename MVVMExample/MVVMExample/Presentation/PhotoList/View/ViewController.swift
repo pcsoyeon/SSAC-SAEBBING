@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     // MARK: - Property
     
-    private var viewModel = PhotoViewModel()
+    private var viewModel = PhotoListViewModel()
     
     // MARK: - Life Cycle
     
@@ -65,6 +65,9 @@ class ViewController: UIViewController {
 
 extension ViewController {
     private func configureCollectionView() {
+        // 0. delegate
+        collectionView.delegate = self
+        
         // 1. layout
         collectionView.collectionViewLayout = createLayout()
         
@@ -88,5 +91,15 @@ extension ViewController {
         let configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         let layout = UICollectionViewCompositionalLayout.list(using: configuration)
         return layout
+    }
+}
+
+// MARK: - CollectionView Protocol
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = PhotoViewController()
+        viewController.id = viewModel.photoList.value[indexPath.item].id
+        present(viewController, animated: true)
     }
 }
