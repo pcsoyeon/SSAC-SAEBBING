@@ -72,12 +72,8 @@ extension ViewController {
         collectionView.collectionViewLayout = createLayout()
         
         // 2. cell register
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Photo>.init { cell, indexPath, itemIdentifier in
-            
-            var content = UIListContentConfiguration.valueCell()
-            content.text = "Like \(itemIdentifier.likes)"
-            
-            cell.contentConfiguration = content
+        let cellRegistration = UICollectionView.CellRegistration<PhotoListCollectionViewCell, Photo>.init { cell, indexPath, itemIdentifier in
+            cell.setData(itemIdentifier.id, description: "\(itemIdentifier.likes)")
         }
         
         // 3. data source
@@ -88,9 +84,33 @@ extension ViewController {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        let configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+//        let configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+//        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+        
+        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        let layout = createCompositionalLayout()
+        layout.configuration = configuration
         return layout
+    }
+    
+    private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { (sectionIndex, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            let itemSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let groupSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .absolute(100))
+            let group = NSCollectionLayoutGroup.horizontal(
+                layoutSize: groupSize,
+                subitems: [item])
+            
+            let section = NSCollectionLayoutSection(group: group)
+            return section
+        }
     }
 }
 

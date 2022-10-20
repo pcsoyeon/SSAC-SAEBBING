@@ -27,6 +27,7 @@
 		929DA59129013FA400810B2A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA59029013FA400810B2A /* PhotoViewModel.swift */; };
 		929DA59329013FDE00810B2A /* PhotoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA59229013FDE00810B2A /* PhotoAPIManager.swift */; };
 		929DA5952901437B00810B2A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5942901437B00810B2A /* PhotoViewController.swift */; };
+		929DA5972901743E00810B2A /* PhotoListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5962901743E00810B2A /* PhotoListCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		929DA59029013FA400810B2A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		929DA59229013FDE00810B2A /* PhotoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPIManager.swift; sourceTree = "<group>"; };
 		929DA5942901437B00810B2A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		929DA5962901743E00810B2A /* PhotoListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				929DA5592901248900810B2A /* ViewController.swift */,
+				929DA5962901743E00810B2A /* PhotoListCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				929DA57C290126BA00810B2A /* APIKey.swift in Sources */,
 				929DA59329013FDE00810B2A /* PhotoAPIManager.swift in Sources */,
 				929DA5952901437B00810B2A /* PhotoViewController.swift in Sources */,
+				929DA5972901743E00810B2A /* PhotoListCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

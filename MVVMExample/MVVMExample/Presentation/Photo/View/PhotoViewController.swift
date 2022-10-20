@@ -15,15 +15,6 @@ class PhotoViewController: UIViewController {
     private enum Item: Hashable {
         case data(String)
         case image(String)
-        
-        var title: String {
-            switch self {
-            case .data(let str):
-                return str
-            case .image(let str):
-                return str
-            }
-        }
     }
     
     // MARK: - UI Property
@@ -93,11 +84,12 @@ class PhotoViewController: UIViewController {
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
-            if indexPath.section == 0 {
-                let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier.title)
+            switch itemIdentifier {
+            case .data(let value):
+                let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: value)
                 return cell
-            } else {
-                let cell = collectionView.dequeueConfiguredReusableCell(using: imageCellRegistration, for: indexPath, item: itemIdentifier.title)
+            case .image(let value):
+                let cell = collectionView.dequeueConfiguredReusableCell(using: imageCellRegistration, for: indexPath, item: value)
                 return cell
             }
         })
