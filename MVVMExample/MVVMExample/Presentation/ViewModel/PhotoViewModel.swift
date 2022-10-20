@@ -14,7 +14,7 @@ final class PhotoViewModel {
     func fetchPhotoList() {
         PhotoListAPIManager.shared.requestPhotoList { photo, statusCode, error in
             guard let photo = photo else { return }
-            self.photoList.value = photo
+            self.photoList.value = photo.sorted(by: { $0.likes > $1.likes })
         }
     }
 }

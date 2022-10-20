@@ -101,8 +101,8 @@
 		929DA56A2901257A00810B2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				929DA5592901248900810B2A /* ViewController.swift */,
-				929DA5852901387500810B2A /* PhotoViewModel.swift */,
+				929DA58B29013E7300810B2A /* View */,
+				929DA58A29013E6600810B2A /* ViewModel */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -159,6 +159,22 @@
 				929DA588290138A100810B2A /* Obervable.swift */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		929DA58A29013E6600810B2A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				929DA5852901387500810B2A /* PhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		929DA58B29013E7300810B2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				929DA5592901248900810B2A /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
