@@ -22,6 +22,8 @@
 		929DA57E290126D200810B2A /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA57D290126D200810B2A /* NetworkResult.swift */; };
 		929DA5812901289D00810B2A /* PhotoListAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5802901289D00810B2A /* PhotoListAPIManager.swift */; };
 		929DA58429012A8700810B2A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA58329012A8700810B2A /* Photo.swift */; };
+		929DA5862901387500810B2A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5852901387500810B2A /* PhotoViewModel.swift */; };
+		929DA589290138A100810B2A /* Obervable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA588290138A100810B2A /* Obervable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		929DA57D290126D200810B2A /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		929DA5802901289D00810B2A /* PhotoListAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListAPIManager.swift; sourceTree = "<group>"; };
 		929DA58329012A8700810B2A /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		929DA5852901387500810B2A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		929DA588290138A100810B2A /* Obervable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obervable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		929DA5542901248900810B2A /* MVVMExample */ = {
 			isa = PBXGroup;
 			children = (
+				929DA5872901389600810B2A /* Global */,
 				929DA5692901257200810B2A /* Application */,
 				929DA56C290125A700810B2A /* Network */,
 				929DA56A2901257A00810B2A /* Presentation */,
@@ -97,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				929DA5592901248900810B2A /* ViewController.swift */,
+				929DA5852901387500810B2A /* PhotoViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -145,6 +151,14 @@
 				929DA58329012A8700810B2A /* Photo.swift */,
 			);
 			path = NetworkModel;
+			sourceTree = "<group>";
+		};
+		929DA5872901389600810B2A /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				929DA588290138A100810B2A /* Obervable.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +245,10 @@
 			files = (
 				929DA58429012A8700810B2A /* Photo.swift in Sources */,
 				929DA55A2901248900810B2A /* ViewController.swift in Sources */,
+				929DA589290138A100810B2A /* Obervable.swift in Sources */,
 				929DA57A290126B400810B2A /* URLConstant.swift in Sources */,
 				929DA5562901248900810B2A /* AppDelegate.swift in Sources */,
+				929DA5862901387500810B2A /* PhotoViewModel.swift in Sources */,
 				929DA57E290126D200810B2A /* NetworkResult.swift in Sources */,
 				929DA5582901248900810B2A /* SceneDelegate.swift in Sources */,
 				929DA5812901289D00810B2A /* PhotoListAPIManager.swift in Sources */,

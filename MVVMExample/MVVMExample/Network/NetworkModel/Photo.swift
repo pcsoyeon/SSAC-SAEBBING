@@ -13,11 +13,7 @@ struct Photo: Codable, Hashable {
     let id: String
     let urls: Urls
     let likes: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case urls, likes
-    }
+    let description: String?
 }
 
 struct Urls: Codable, Hashable {
