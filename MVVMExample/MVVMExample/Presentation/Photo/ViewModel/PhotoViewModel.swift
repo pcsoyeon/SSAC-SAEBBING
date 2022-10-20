@@ -9,7 +9,7 @@ import Foundation
 
 final class PhotoViewModel {
     
-    private var photo: Observable<Photo> = Observable(Photo(id: "", urls: Urls(raw: "", full: "", regular: "", small: "", thumb: "", smallS3: ""), likes: 0, description: ""))
+    var photo: Observable<Photo> = Observable(Photo(id: "", urls: Urls(raw: "", full: "", regular: "", small: "", thumb: "", smallS3: ""), likes: 0, description: ""))
     
     func fetchPhoto(_ id: String) {
         PhotoAPIManger.shared.requestPhoto(id) { item, statusCode, error in
