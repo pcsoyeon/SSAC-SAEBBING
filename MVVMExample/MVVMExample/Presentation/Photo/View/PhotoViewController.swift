@@ -12,6 +12,20 @@ import Then
 
 class PhotoViewController: UIViewController {
     
+    private enum Item: Hashable {
+        case data(String)
+        case image(String)
+        
+        var title: String {
+            switch self {
+            case .data(let str):
+                return str
+            case .image(let str):
+                return str
+            }
+        }
+    }
+    
     // MARK: - UI Property
     
     private let configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
@@ -19,7 +33,9 @@ class PhotoViewController: UIViewController {
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     
-    private var dataSource: UICollectionViewDiffableDataSource<Int, String>!
+    private var dataSource: UICollectionViewDiffableDataSource<Int, Item>!
+//    private var dataSource: UICollectionViewDiffableDataSource<Int, String>!
+//    private var imageDataSource: UICollectionViewDiffableDataSource<Int, String>!
     
     // MARK: - Property
     
@@ -59,22 +75,45 @@ class PhotoViewController: UIViewController {
             cell.contentConfiguration = content
         }
         
+        let imageCellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, String>.init { cell, indexPath, itemIdentifier in
+            
+            var content = UIListContentConfiguration.valueCell()
+            
+            DispatchQueue.global().async {
+                guard let url = URL(string: itemIdentifier) else { return }
+                let data = try? Data(contentsOf: url)
+                
+                DispatchQueue.main.async {
+                    content.image = UIImage(data: data!)
+                    cell.contentConfiguration = content
+                }
+            }
+            
+            cell.contentConfiguration = content
+        }
+        
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
-            let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
-            return cell
+            if indexPath.section == 0 {
+                let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier.title)
+                return cell
+            } else {
+                let cell = collectionView.dequeueConfiguredReusableCell(using: imageCellRegistration, for: indexPath, item: itemIdentifier.title)
+                return cell
+            }
         })
+        
     }
     
     // MARK: - Data
     
     private func bindData() {
         viewModel.photo.bind { photo in
-            var snapshot = NSDiffableDataSourceSnapshot<Int, String>()
+            var snapshot = NSDiffableDataSourceSnapshot<Int, Item>()
             
-            let arr = [photo.id, photo.urls.full]
+            snapshot.appendSections([0, 1])
             
-            snapshot.appendSections([0])
-            snapshot.appendItems(arr)
+            snapshot.appendItems([Item.data(photo.id)], toSection: 0)
+            snapshot.appendItems([Item.image(photo.urls.full)], toSection: 1)
             
             self.dataSource.apply(snapshot)
         }
