@@ -17,8 +17,9 @@ final class ListAPIManager {
     func fetchPhotoList(completionHandler: @escaping ([Photo]?, Int?, Error?) -> Void) {
         let url = URLConstant.listURL
         let headers: HTTPHeaders = [APIKey.authorization : APIKey.key]
-        let params = ["page" : 1,
-                      "per_page" : 10]
+        let params: [String : Any] = ["page" : 1,
+                                      "per_page" : 10,
+                                      "order_by" : "popular"]
         
         let request = AF.request(url,
                                  method: .get,
