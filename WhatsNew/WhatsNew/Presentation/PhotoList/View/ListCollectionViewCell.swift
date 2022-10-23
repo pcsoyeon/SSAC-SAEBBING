@@ -16,7 +16,7 @@ final class ListCollectionViewCell: UICollectionViewCell {
     
     private var imageView = UIImageView().then {
         $0.backgroundColor = .systemGray6
-        $0.contentMode = .scaleAspectFill
+        $0.contentMode = .scaleAspectFit
     }
     
     private var likesLabel = UILabel().then {
@@ -42,8 +42,10 @@ final class ListCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(likesLabel)
         
         imageView.snp.makeConstraints { make in
-            make.top.leading.bottom.equalToSuperview().inset(20)
-            make.width.equalTo(15)
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().inset(20)
+            make.width.equalTo(80)
+            make.height.equalTo(80)
         }
         
         likesLabel.snp.makeConstraints { make in
@@ -55,6 +57,15 @@ final class ListCollectionViewCell: UICollectionViewCell {
     // MARK: - Data
     
     func setData(_ data: Photo) {
+        likesLabel.text = "Likes : \(data.likes)"
         
+        DispatchQueue.global().async {
+            guard let url = URL(string: data.urls.thumb) else { return }
+            let data = try? Data(contentsOf: url)
+            
+            DispatchQueue.main.async {
+                self.imageView.image = UIImage(data: data!)
+            }
+        }
     }
 }

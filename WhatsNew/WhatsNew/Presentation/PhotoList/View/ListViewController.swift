@@ -20,13 +20,19 @@ class ListViewController: UIViewController {
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, Photo>!
     
+    private let viewModel = ListViewModel()
+    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureHierachy()
         configureDataSource()
+        
+        bindData()
     }
+    
+    // MARK: - CollectionView
     
     private func configureHierachy () {
         view.addSubview(collectionView)
@@ -45,6 +51,22 @@ class ListViewController: UIViewController {
             let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
             return cell
         })
+    }
+    
+    // MARK: - Data
+    
+    private func bindData() {
+        viewModel.requestPhotoList()
+        
+        viewModel.list.bind { [weak self] value in
+            guard let self = self else { return }
+            
+            var snapshot = NSDiffableDataSourceSnapshot<Int, Photo>()
+            snapshot.appendSections([0])
+            snapshot.appendItems(value)
+            
+            self.dataSource.apply(snapshot)
+        }
     }
 }
 
