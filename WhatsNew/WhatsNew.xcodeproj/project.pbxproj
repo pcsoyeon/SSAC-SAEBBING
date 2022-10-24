@@ -26,6 +26,7 @@
 		92F80EEC290571F100938A01 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F80EEB290571F100938A01 /* APIKey.swift */; };
 		92F80F03290659E500938A01 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 92F80F02290659E500938A01 /* RxCocoa */; };
 		92F80F05290659E500938A01 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 92F80F04290659E500938A01 /* RxSwift */; };
+		92F80F0D29067AD200938A01 /* SimplePickerViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F80F0C29067AD200938A01 /* SimplePickerViewExampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		92F80EE72905719E00938A01 /* ListAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAPIManager.swift; sourceTree = "<group>"; };
 		92F80EE9290571E400938A01 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		92F80EEB290571F100938A01 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		92F80F0C29067AD200938A01 /* SimplePickerViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewExampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9265DD7229075618005D56BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9265DD732907561F005D56BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				92F80F0C29067AD200938A01 /* SimplePickerViewExampleViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		929DA5C529028A4200810B2A = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +141,7 @@
 		929DA5E829028A6400810B2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				92F80F0629066D9A00938A01 /* RxCocoaExample */,
 				929DA5E929028A8B00810B2A /* PhotoList */,
 			);
 			path = Presentation;
@@ -187,6 +205,15 @@
 				92F80EE72905719E00938A01 /* ListAPIManager.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		92F80F0629066D9A00938A01 /* RxCocoaExample */ = {
+			isa = PBXGroup;
+			children = (
+				9265DD7229075618005D56BE /* View */,
+				9265DD732907561F005D56BE /* Controller */,
+			);
+			path = RxCocoaExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +304,7 @@
 				92F80EDB2905695D00938A01 /* Photo.swift in Sources */,
 				92F80EE42905718C00938A01 /* URLConstant.swift in Sources */,
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
+				92F80F0D29067AD200938A01 /* SimplePickerViewExampleViewController.swift in Sources */,
 				92F80EDD29056A9800938A01 /* ListCollectionViewCell.swift in Sources */,
 				92F80EEC290571F100938A01 /* APIKey.swift in Sources */,
 				92F80EDF29056E0E00938A01 /* ListViewModel.swift in Sources */,
