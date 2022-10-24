@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class ListViewController: UIViewController {
+final class ListViewController: UIViewController {
     
     // MARK: - UI Property
     
