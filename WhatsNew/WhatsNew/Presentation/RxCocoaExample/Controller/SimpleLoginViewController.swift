@@ -23,19 +23,20 @@ class SimpleLoginViewController: UIViewController {
     }
     
     private var usernameOutlet = UITextField().then {
-        $0.backgroundColor = .systemGray6
+        $0.borderStyle = .roundedRect
     }
     
     private var usernameValidOutlet = UILabel()
 
     private var passwordOutlet = UITextField().then {
-        $0.backgroundColor = .systemGray6
+        $0.borderStyle = .roundedRect
     }
     
     private var passwordValidOutlet = UILabel()
 
     private var doSomethingOutlet = UIButton().then {
-        $0.backgroundColor = . systemPink
+        $0.setTitle("로그인", for: .normal)
+        $0.setTitleColor(.systemBlue, for: .normal)
     }
     
     // MARK: - Property
@@ -63,7 +64,8 @@ class SimpleLoginViewController: UIViewController {
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(200)
         }
     }
     
