@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */; };
+		9265DD7F2907633D005D56BE /* SimpleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD7E2907633D005D56BE /* SimpleLoginViewController.swift */; };
 		929DA5D229028A4200810B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D129028A4200810B2A /* AppDelegate.swift */; };
 		929DA5D429028A4200810B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D329028A4200810B2A /* SceneDelegate.swift */; };
 		929DA5D629028A4200810B2A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D529028A4200810B2A /* ListViewController.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewController.swift; sourceTree = "<group>"; };
+		9265DD7E2907633D005D56BE /* SimpleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoginViewController.swift; sourceTree = "<group>"; };
 		929DA5CE29028A4200810B2A /* WhatsNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929DA5D129028A4200810B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		929DA5D329028A4200810B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				92F80F0C29067AD200938A01 /* SimplePickerViewExampleViewController.swift */,
 				9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */,
+				9265DD7E2907633D005D56BE /* SimpleLoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F80EDB2905695D00938A01 /* Photo.swift in Sources */,
+				9265DD7F2907633D005D56BE /* SimpleLoginViewController.swift in Sources */,
 				92F80EE42905718C00938A01 /* URLConstant.swift in Sources */,
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
 				92F80F0D29067AD200938A01 /* SimplePickerViewExampleViewController.swift in Sources */,
