@@ -20,7 +20,7 @@ final class SearchPhotoViewController: UIViewController {
     
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     
-    // MARK: - Propery
+    // MARK: - Property
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, Photo>!
     
