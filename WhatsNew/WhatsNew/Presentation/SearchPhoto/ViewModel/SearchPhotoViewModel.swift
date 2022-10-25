@@ -7,16 +7,21 @@
 
 import Foundation
 
+import RxCocoa
+import RxSwift
+
 final class SearchPhotoViewModel {
     
-    var list: CObservable<[Photo]> = CObservable([])
+//    var list: CObservable<[Photo]> = CObservable([])
+    
+    var list = PublishSubject<[Photo]>()
     
     func requestPhotoList(_ query: String) {
         SearchPhotoAPIManager.shared.fetchPhotoList(query) { [weak self] value, statusCode, error in
             guard let self = self else { return }
             guard let value = value else { return }
             
-            self.list.value = value.results
+            self.list.onNext(value.results)
         }
     }
 }

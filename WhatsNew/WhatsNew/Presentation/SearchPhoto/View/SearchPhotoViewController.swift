@@ -85,15 +85,17 @@ final class SearchPhotoViewController: UIViewController {
     // MARK: - Data
     
     private func bindData() {
-        viewModel.list.bind { [weak self] photoList in
-            guard let self = self else { return }
-            
-            var snapshot = NSDiffableDataSourceSnapshot<Int, Photo>()
-            snapshot.appendSections([0])
-            snapshot.appendItems(photoList)
-            
-            self.dataSource.apply(snapshot)
-        }
+        viewModel.list
+            .bind { [weak self] photoList in
+                guard let self = self else { return }
+                
+                var snapshot = NSDiffableDataSourceSnapshot<Int, Photo>()
+                snapshot.appendSections([0])
+                snapshot.appendItems(photoList)
+                
+                self.dataSource.apply(snapshot)
+            }
+            .disposed(by: disposeBag)
     }
 }
 
