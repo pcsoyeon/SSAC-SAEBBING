@@ -58,6 +58,12 @@ class SimpleTextFieldViewController: UIViewController {
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10)
             make.height.equalTo(50)
         }
+        
+        view.addSubview(result)
+        result.snp.makeConstraints { make in
+            make.top.equalTo(number3.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview().inset(10)
+        }
     }
     
     private func configureTextField() {
