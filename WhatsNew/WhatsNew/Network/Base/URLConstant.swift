@@ -10,6 +10,6 @@ import Foundation
 enum URLConstant {
     static let baseURL = "https://api.unsplash.com"
     
-    static let searchURL = baseURL + "/search/photos?query="
+    static let searchURL = baseURL + "/search/photos"
     static let listURL = baseURL + "/photos"
 }

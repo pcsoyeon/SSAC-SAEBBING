@@ -12,6 +12,10 @@
 		9265DD852907AA57005D56BE /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD842907AA57005D56BE /* SimpleTableViewController.swift */; };
 		9265DD872907B1F3005D56BE /* RxCocoaExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD862907B1F3005D56BE /* RxCocoaExampleViewController.swift */; };
 		9265DD892907BECF005D56BE /* RxCocoaInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD882907BECF005D56BE /* RxCocoaInitialViewController.swift */; };
+		9265DD902907CBCF005D56BE /* SearchPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD8F2907CBCF005D56BE /* SearchPhotoViewController.swift */; };
+		9265DD922907CC13005D56BE /* SearchPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD912907CC13005D56BE /* SearchPhotoViewModel.swift */; };
+		9265DD962907CCAE005D56BE /* SearchPhotoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD952907CCAE005D56BE /* SearchPhotoAPIManager.swift */; };
+		9265DD982907D134005D56BE /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD972907D134005D56BE /* SearchPhoto.swift */; };
 		929DA5D229028A4200810B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D129028A4200810B2A /* AppDelegate.swift */; };
 		929DA5D429028A4200810B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D329028A4200810B2A /* SceneDelegate.swift */; };
 		929DA5D629028A4200810B2A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D529028A4200810B2A /* ListViewController.swift */; };
@@ -40,6 +44,10 @@
 		9265DD842907AA57005D56BE /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		9265DD862907B1F3005D56BE /* RxCocoaExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaExampleViewController.swift; sourceTree = "<group>"; };
 		9265DD882907BECF005D56BE /* RxCocoaInitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaInitialViewController.swift; sourceTree = "<group>"; };
+		9265DD8F2907CBCF005D56BE /* SearchPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoViewController.swift; sourceTree = "<group>"; };
+		9265DD912907CC13005D56BE /* SearchPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoViewModel.swift; sourceTree = "<group>"; };
+		9265DD952907CCAE005D56BE /* SearchPhotoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoAPIManager.swift; sourceTree = "<group>"; };
+		9265DD972907D134005D56BE /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
 		929DA5CE29028A4200810B2A /* WhatsNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929DA5D129028A4200810B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		929DA5D329028A4200810B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +103,57 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		9265DD8B2907CBA8005D56BE /* SearchPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				9265DD8E2907CBBC005D56BE /* Model */,
+				9265DD8D2907CBB6005D56BE /* View */,
+				9265DD8C2907CBB1005D56BE /* ViewModel */,
+			);
+			path = SearchPhoto;
+			sourceTree = "<group>";
+		};
+		9265DD8C2907CBB1005D56BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9265DD912907CC13005D56BE /* SearchPhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9265DD8D2907CBB6005D56BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9265DD8F2907CBCF005D56BE /* SearchPhotoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9265DD8E2907CBBC005D56BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9265DD972907D134005D56BE /* SearchPhoto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9265DD932907CC87005D56BE /* SearchPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				9265DD952907CCAE005D56BE /* SearchPhotoAPIManager.swift */,
+			);
+			path = SearchPhoto;
+			sourceTree = "<group>";
+		};
+		9265DD942907CC94005D56BE /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				9265DD932907CC87005D56BE /* SearchPhoto */,
+				92F80EE62905719500938A01 /* List */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 		929DA5C529028A4200810B2A = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +206,7 @@
 		929DA5E729028A5900810B2A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				92F80EE62905719500938A01 /* List */,
+				9265DD942907CC94005D56BE /* APIManager */,
 				92F80EE52905718F00938A01 /* Base */,
 			);
 			path = Network;
@@ -156,6 +215,7 @@
 		929DA5E829028A6400810B2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9265DD8B2907CBA8005D56BE /* SearchPhoto */,
 				92F80F0629066D9A00938A01 /* RxCocoaExample */,
 				929DA5E929028A8B00810B2A /* PhotoList */,
 			);
@@ -316,18 +376,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9265DD982907D134005D56BE /* SearchPhoto.swift in Sources */,
 				92F80EDB2905695D00938A01 /* Photo.swift in Sources */,
 				9265DD7F2907633D005D56BE /* SimpleLoginViewController.swift in Sources */,
 				92F80EE42905718C00938A01 /* URLConstant.swift in Sources */,
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
+				9265DD902907CBCF005D56BE /* SearchPhotoViewController.swift in Sources */,
 				92F80F0D29067AD200938A01 /* SimplePickerViewExampleViewController.swift in Sources */,
 				9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */,
+				9265DD922907CC13005D56BE /* SearchPhotoViewModel.swift in Sources */,
 				92F80EDD29056A9800938A01 /* ListCollectionViewCell.swift in Sources */,
 				92F80EEC290571F100938A01 /* APIKey.swift in Sources */,
 				92F80EDF29056E0E00938A01 /* ListViewModel.swift in Sources */,
 				9265DD892907BECF005D56BE /* RxCocoaInitialViewController.swift in Sources */,
 				929DA5D629028A4200810B2A /* ListViewController.swift in Sources */,
 				9265DD872907B1F3005D56BE /* RxCocoaExampleViewController.swift in Sources */,
+				9265DD962907CCAE005D56BE /* SearchPhotoAPIManager.swift in Sources */,
 				929DA5D229028A4200810B2A /* AppDelegate.swift in Sources */,
 				9265DD852907AA57005D56BE /* SimpleTableViewController.swift in Sources */,
 				929DA5D429028A4200810B2A /* SceneDelegate.swift in Sources */,
