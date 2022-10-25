@@ -12,8 +12,6 @@ import RxSwift
 
 final class SearchPhotoViewModel {
     
-//    var list: CObservable<[Photo]> = CObservable([])
-    
     var list = PublishSubject<[Photo]>()
     
     func requestPhotoList(_ query: String) {
