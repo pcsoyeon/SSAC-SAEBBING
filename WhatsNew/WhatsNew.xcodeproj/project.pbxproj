@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */; };
 		929DA5D229028A4200810B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D129028A4200810B2A /* AppDelegate.swift */; };
 		929DA5D429028A4200810B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D329028A4200810B2A /* SceneDelegate.swift */; };
 		929DA5D629028A4200810B2A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929DA5D529028A4200810B2A /* ListViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewController.swift; sourceTree = "<group>"; };
 		929DA5CE29028A4200810B2A /* WhatsNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929DA5D129028A4200810B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		929DA5D329028A4200810B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				92F80F0C29067AD200938A01 /* SimplePickerViewExampleViewController.swift */,
+				9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				92F80EE42905718C00938A01 /* URLConstant.swift in Sources */,
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
 				92F80F0D29067AD200938A01 /* SimplePickerViewExampleViewController.swift in Sources */,
+				9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */,
 				92F80EDD29056A9800938A01 /* ListCollectionViewCell.swift in Sources */,
 				92F80EEC290571F100938A01 /* APIKey.swift in Sources */,
 				92F80EDF29056E0E00938A01 /* ListViewModel.swift in Sources */,
