@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 
 enum ListError: Error {
+    case requestError
     case serverError
 }
 
@@ -39,12 +40,12 @@ final class ListViewModel {
             guard let photoList = photoList else { return }
             guard let statusCode = statusCode else { return }
             
-            if statusCode != 200 {
+            if statusCode == 200 {
                 self.photoList.onNext(photoList)
                 self.photoList.onCompleted()
                 dump(photoList)
             } else {
-                self.photoList.onError(ListError.serverError)
+                self.photoList.onError(ListError.requestError)
             }
         }
     }
