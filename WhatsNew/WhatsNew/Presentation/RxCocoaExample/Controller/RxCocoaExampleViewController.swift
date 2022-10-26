@@ -14,19 +14,32 @@ import Then
 
 final class RxCocoaExampleViewController: UIViewController {
     
+    // MARK: - UI Property
+    
+    private var button = UIButton().then {
+        $0.setTitle("Button", for: .normal)
+        $0.setTitleColor(.systemBlue, for: .normal)
+    }
+    
     // MARK: - Property
     
     private var items = Observable.just(["🫐", "🍋", "🍓"])
     
     private let disposeBag = DisposeBag()
+    private var viewModel = ListViewModel()
+    
+    private var nickname: String = "소깡"
     
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bindData()
         view.backgroundColor = .systemGray6
-        setOperator()
+        
+//        bindData()
+//        setOperator()
+        observableAndSubject()
+        configureButton()
     }
     
     deinit {
@@ -74,5 +87,82 @@ final class RxCocoaExampleViewController: UIViewController {
             }
         
         intervalObservable1.disposed(by: disposeBag)
+    }
+    
+    private func observableAndSubject() {
+        let observableInt = Observable<Int>.create { observer in
+            observer.onNext(Int.random(in: 1...100))
+            return Disposables.create()
+        }
+        
+        observableInt
+            .subscribe { value in
+                print("observableInt \(value)")
+            }
+            .disposed(by: disposeBag)
+        
+        observableInt
+            .subscribe { value in
+                print("observableInt \(value)")
+            }
+            .disposed(by: disposeBag)
+        
+        let subjectInt = BehaviorSubject(value: 0)
+        subjectInt.onNext(Int.random(in: 1...100))
+        
+        subjectInt
+            .subscribe { value in
+                print("subjectInt \(value)")
+            }
+            .disposed(by: disposeBag)
+        
+        subjectInt
+            .subscribe { value in
+                print("subjectInt \(value)")
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func configureButton() {
+        view.addSubview(button)
+        button.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        button.rx.tap
+            .withUnretained(self)
+            .bind { vc, _ in
+                vc.viewModel.requestPhotoList()
+            }
+            .disposed(by: disposeBag)
+        
+        button.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { vc, value in
+                print(value)
+                vc.viewModel.fetchPhotoList()
+            }, onError: { error in
+                print(error)
+            }, onCompleted: {
+                print("완료")
+            }, onDisposed: {
+                print("끝 버려")
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.photoList
+            .withUnretained(self)
+            .subscribe(onNext: { vc, value in
+                dump(value)
+            }, onError: { error in
+                print("============ 🔥 에러 🔥 ============")
+                print(error)
+            }, onCompleted: {
+                print("============ 완료 ============")
+            }, onDisposed: {
+                print("============ 끝 버려 ============")
+            })
+//            .dispose()
+            .disposed(by: disposeBag)
     }
 }
