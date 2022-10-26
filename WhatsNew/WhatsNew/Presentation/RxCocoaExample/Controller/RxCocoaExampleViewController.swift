@@ -140,7 +140,7 @@ final class RxCocoaExampleViewController: UIViewController {
             .withUnretained(self)
             .subscribe(onNext: { vc, value in
                 print(value)
-                vc.viewModel.fetchPhotoList()
+                vc.viewModel.requestPhotoListWithPublishSubject()
             }, onError: { error in
                 print(error)
             }, onCompleted: {
@@ -150,7 +150,7 @@ final class RxCocoaExampleViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.photoList
+        viewModel.publishSubjectList
             .withUnretained(self)
             .subscribe(onNext: { vc, value in
                 dump(value)

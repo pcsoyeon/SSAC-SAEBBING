@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
 import SnapKit
 import Then
 
@@ -22,6 +24,8 @@ final class ListViewController: UIViewController {
     
     private let viewModel = ListViewModel()
     
+    private let disposeBag = DisposeBag()
+    
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -35,6 +39,7 @@ final class ListViewController: UIViewController {
     // MARK: - CollectionView
     
     private func configureHierachy () {
+        view.backgroundColor = .white
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
@@ -56,17 +61,31 @@ final class ListViewController: UIViewController {
     // MARK: - Data
     
     private func bindData() {
-        viewModel.requestPhotoList()
+//        viewModel.requestPhotoList()
         
-        viewModel.list.bind { [weak self] value in
-            guard let self = self else { return }
-            
-            var snapshot = NSDiffableDataSourceSnapshot<Int, Photo>()
-            snapshot.appendSections([0])
-            snapshot.appendItems(value)
-            
-            self.dataSource.apply(snapshot)
-        }
+//        viewModel.list.bind { [weak self] value in
+//            guard let self = self else { return }
+//
+//            var snapshot = NSDiffableDataSourceSnapshot<Int, Photo>()
+//            snapshot.appendSections([0])
+//            snapshot.appendItems(value)
+//
+//            self.dataSource.apply(snapshot)
+//        }
+        
+        viewModel.requestPhotoListWithPublishRelay()
+        
+        viewModel.publishSubjectList
+//            .observe(on: MainScheduler.instance)
+            .withUnretained(self)
+            .bind { vc, value in
+                var snapshot = NSDiffableDataSourceSnapshot<Int, Photo>()
+                snapshot.appendSections([0])
+                snapshot.appendItems(value)
+                
+                self.dataSource.apply(snapshot)
+            }
+            .disposed(by: disposeBag)
     }
 }
 

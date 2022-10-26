@@ -17,7 +17,8 @@ enum ListError: Error {
 
 final class ListViewModel {
     var list: CObservable<[Photo]> = CObservable([])
-    var photoList = PublishSubject<[Photo]>()
+    var publishSubjectList = PublishSubject<[Photo]>()
+    var publishRelay = PublishRelay<[Photo]>()
     
     func requestPhotoList() {
         ListAPIManager.shared.fetchPhotoList { [weak self] photoList, statusCode, error in
@@ -34,18 +35,31 @@ final class ListViewModel {
         }
     }
     
-    func fetchPhotoList() {
+    func requestPhotoListWithPublishSubject() {
         ListAPIManager.shared.fetchPhotoList { [weak self] photoList, statusCode, error in
             guard let self = self else { return }
             guard let photoList = photoList else { return }
             guard let statusCode = statusCode else { return }
             
             if statusCode == 200 {
-                self.photoList.onNext(photoList)
-                self.photoList.onCompleted()
-                dump(photoList)
+                self.publishSubjectList.onNext(photoList)
+                self.publishSubjectList.onCompleted()
             } else {
-                self.photoList.onError(ListError.requestError)
+                self.publishSubjectList.onError(ListError.requestError)
+            }
+        }
+    }
+    
+    func requestPhotoListWithPublishRelay() {
+        ListAPIManager.shared.fetchPhotoList { [weak self] photoList, statusCode, error in
+            guard let self = self else { return }
+            guard let photoList = photoList else { return }
+            guard let statusCode = statusCode else { return }
+            
+            if statusCode == 200 {
+                self.publishRelay.accept(photoList)
+            } else {
+                self.publishSubjectList.onError(ListError.requestError)
             }
         }
     }
