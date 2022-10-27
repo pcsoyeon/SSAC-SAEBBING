@@ -76,7 +76,7 @@ final class ListViewController: UIViewController {
         viewModel.requestPhotoListWithPublishRelay()
         
         viewModel.publishSubjectList
-//            .observe(on: MainScheduler.instance)
+            .observe(on: MainScheduler.instance)
             .withUnretained(self)
             .bind { vc, value in
                 var snapshot = NSDiffableDataSourceSnapshot<Int, Photo>()
