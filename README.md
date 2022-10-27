@@ -2,13 +2,13 @@
 
 ### 🗳 블로그 정리
 **Diffable DataSource + CompositionalLayout** </br>
-[Collection View APIs](https://so-kyte.tistory.com/179?category=1033999) </br>
-[Unsplash](https://so-kyte.tistory.com/181?category=1033999) </br>
+[✔️ Collection View APIs](https://so-kyte.tistory.com/179?category=1033999) </br>
+[✔️ Unsplash](https://so-kyte.tistory.com/181?category=1033999) </br>
 
 </br>
 </br>
 
-**RxSwift**
+**RxSwift** </br>
 [RxSwift 기록](https://so-kyte.tistory.com/category/Swift/RxSwift) </br>
 
 🌱 새싹 기록 
