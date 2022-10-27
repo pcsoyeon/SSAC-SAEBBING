@@ -1,12 +1,15 @@
 # SSAC-SAEBBING
 
 ### 🗳 블로그 정리
-**Diffable DataSource + CompositionalLayout**
-[Collection View APIs](https://so-kyte.tistory.com/179?category=1033999) 
-[Unsplash](https://so-kyte.tistory.com/181?category=1033999)
+**Diffable DataSource + CompositionalLayout** </br>
+[Collection View APIs](https://so-kyte.tistory.com/179?category=1033999) </br>
+[Unsplash](https://so-kyte.tistory.com/181?category=1033999) </br>
+
+</br>
+</br>
 
 **RxSwift**
-[RxSwift 기록](https://so-kyte.tistory.com/category/Swift/RxSwift)
+[RxSwift 기록](https://so-kyte.tistory.com/category/Swift/RxSwift) </br>
 
 🌱 새싹 기록 
 | 제목 | 링크 |
@@ -15,6 +18,7 @@
 | Observable/Observer, Subject, Relay | [Tistory](https://so-kyte.tistory.com/192?category=1078462) |
 | Observable VS Subject, Relay & Drive | [Tistory](https://so-kyte.tistory.com/195?category=1078462) |
 
+</br>
 
 🔥 복습 기록 
 | 제목 | 링크 |
@@ -25,6 +29,8 @@
 | Disposable | [Tistory](https://so-kyte.tistory.com/188?category=1078462) |
 | Observable VS Subject | [Tistory](https://so-kyte.tistory.com/191?category=1078462)
 
+</br>
+</br>
 
 ### ✏️ 소소한 기록 
 | 날짜 | 제목 | 한 줄 요약 | 링크 |
