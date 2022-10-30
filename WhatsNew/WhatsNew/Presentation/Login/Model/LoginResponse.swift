@@ -8,7 +8,7 @@
 import Foundation
 
 struct LoginResponse: Codable {
-    let name:String
+    let name: String
     
     init(name:String) {
         self.name = name

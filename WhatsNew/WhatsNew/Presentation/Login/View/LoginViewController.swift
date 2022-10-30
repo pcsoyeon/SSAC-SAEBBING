@@ -82,6 +82,13 @@ extension LoginViewController: BaseViewControllerAttribute {
     }
     
     func bind() {
+        viewModel.emailRelay
+            .bind(to: emailTextField.rx.text)
+            .disposed(by: disposeBag)
+        viewModel.passwordRelay
+            .bind(to: passwordTextField.rx.text)
+            .disposed(by: disposeBag)
+        
         emailTextField.rx.text.orEmpty
             .bind(to: viewModel.emailRelay)
             .disposed(by: disposeBag)

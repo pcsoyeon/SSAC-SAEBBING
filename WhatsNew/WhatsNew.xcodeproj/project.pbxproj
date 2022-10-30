@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		924CA438290EC0CB00C0BB0C /* LoginAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CA437290EC0CB00C0BB0C /* LoginAPIManager.swift */; };
 		9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */; };
 		9265DD7F2907633D005D56BE /* SimpleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD7E2907633D005D56BE /* SimpleLoginViewController.swift */; };
 		9265DD852907AA57005D56BE /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD842907AA57005D56BE /* SimpleTableViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		924CA437290EC0CB00C0BB0C /* LoginAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIManager.swift; sourceTree = "<group>"; };
 		9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewController.swift; sourceTree = "<group>"; };
 		9265DD7E2907633D005D56BE /* SimpleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoginViewController.swift; sourceTree = "<group>"; };
 		9265DD842907AA57005D56BE /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		924CA436290EC0BE00C0BB0C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				924CA437290EC0CB00C0BB0C /* LoginAPIManager.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		9265DD732907561F005D56BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		9265DD942907CC94005D56BE /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				924CA436290EC0BE00C0BB0C /* Login */,
 				9265DD932907CC87005D56BE /* SearchPhoto */,
 				92F80EE62905719500938A01 /* List */,
 			);
@@ -253,8 +264,8 @@
 			children = (
 				928135F1290AD46900700AA6 /* Login */,
 				9265DD8B2907CBA8005D56BE /* SearchPhoto */,
-				92F80F0629066D9A00938A01 /* RxCocoaExample */,
 				929DA5E929028A8B00810B2A /* PhotoList */,
+				92F80F0629066D9A00938A01 /* RxCocoaExample */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -416,6 +427,7 @@
 				928135F6290B4B3700700AA6 /* LoginViewController.swift in Sources */,
 				9265DD982907D134005D56BE /* SearchPhoto.swift in Sources */,
 				92F80EDB2905695D00938A01 /* Photo.swift in Sources */,
+				924CA438290EC0CB00C0BB0C /* LoginAPIManager.swift in Sources */,
 				9265DD7F2907633D005D56BE /* SimpleLoginViewController.swift in Sources */,
 				92F80EE42905718C00938A01 /* URLConstant.swift in Sources */,
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
