@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		924CA438290EC0CB00C0BB0C /* LoginAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CA437290EC0CB00C0BB0C /* LoginAPIManager.swift */; };
+		924CA43D290ECF7700C0BB0C /* ReactiveSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CA43C290ECF7700C0BB0C /* ReactiveSearchViewController.swift */; };
+		924CA43F290ECFEE00C0BB0C /* ReactiveSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CA43E290ECFEE00C0BB0C /* ReactiveSearchViewModel.swift */; };
 		9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */; };
 		9265DD7F2907633D005D56BE /* SimpleLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD7E2907633D005D56BE /* SimpleLoginViewController.swift */; };
 		9265DD852907AA57005D56BE /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9265DD842907AA57005D56BE /* SimpleTableViewController.swift */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		924CA437290EC0CB00C0BB0C /* LoginAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIManager.swift; sourceTree = "<group>"; };
+		924CA43C290ECF7700C0BB0C /* ReactiveSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveSearchViewController.swift; sourceTree = "<group>"; };
+		924CA43E290ECFEE00C0BB0C /* ReactiveSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveSearchViewModel.swift; sourceTree = "<group>"; };
 		9265DD7A29075F70005D56BE /* SimpleTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextFieldViewController.swift; sourceTree = "<group>"; };
 		9265DD7E2907633D005D56BE /* SimpleLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoginViewController.swift; sourceTree = "<group>"; };
 		9265DD842907AA57005D56BE /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,31 @@
 				924CA437290EC0CB00C0BB0C /* LoginAPIManager.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		924CA439290ECF4F00C0BB0C /* ReactiveSearch */ = {
+			isa = PBXGroup;
+			children = (
+				924CA43B290ECF6300C0BB0C /* View */,
+				924CA43A290ECF5C00C0BB0C /* ViewModel */,
+			);
+			path = ReactiveSearch;
+			sourceTree = "<group>";
+		};
+		924CA43A290ECF5C00C0BB0C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				924CA43E290ECFEE00C0BB0C /* ReactiveSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		924CA43B290ECF6300C0BB0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				924CA43C290ECF7700C0BB0C /* ReactiveSearchViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9265DD732907561F005D56BE /* Controller */ = {
@@ -262,6 +291,7 @@
 		929DA5E829028A6400810B2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				924CA439290ECF4F00C0BB0C /* ReactiveSearch */,
 				928135F1290AD46900700AA6 /* Login */,
 				9265DD8B2907CBA8005D56BE /* SearchPhoto */,
 				929DA5E929028A8B00810B2A /* PhotoList */,
@@ -426,8 +456,10 @@
 				928135FA290B4B4400700AA6 /* LoginViewModel.swift in Sources */,
 				928135F6290B4B3700700AA6 /* LoginViewController.swift in Sources */,
 				9265DD982907D134005D56BE /* SearchPhoto.swift in Sources */,
+				924CA43D290ECF7700C0BB0C /* ReactiveSearchViewController.swift in Sources */,
 				92F80EDB2905695D00938A01 /* Photo.swift in Sources */,
 				924CA438290EC0CB00C0BB0C /* LoginAPIManager.swift in Sources */,
+				924CA43F290ECFEE00C0BB0C /* ReactiveSearchViewModel.swift in Sources */,
 				9265DD7F2907633D005D56BE /* SimpleLoginViewController.swift in Sources */,
 				92F80EE42905718C00938A01 /* URLConstant.swift in Sources */,
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
