@@ -5,8 +5,26 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "bdecb2c87a21a236dcfe88b21532ad3f0e3d20f4"
+        "revision" : "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
+        "version" : "5.6.2"
+      }
+    },
+    {
+      "identity" : "ohhttpstubs",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AliSoftware/OHHTTPStubs.git",
+      "state" : {
+        "revision" : "12f19662426d0434d6c330c6974d53e2eb10ecd9",
+        "version" : "9.1.0"
+      }
+    },
+    {
+      "identity" : "rxalamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxAlamofire.git",
+      "state" : {
+        "revision" : "9535b58695b91fb67f56d58d6fd0c76462d7743a",
+        "version" : "6.1.2"
       }
     },
     {

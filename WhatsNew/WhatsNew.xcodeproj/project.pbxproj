@@ -29,9 +29,13 @@
 		929DA5D929028A4200810B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5D729028A4200810B2A /* Main.storyboard */; };
 		929DA5DB29028A4300810B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5DA29028A4300810B2A /* Assets.xcassets */; };
 		929DA5DE29028A4300810B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5DC29028A4300810B2A /* LaunchScreen.storyboard */; };
+		92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808ED290FC663006956A2 /* ShopViewController.swift */; };
+		92F808F0290FC66D006956A2 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808EF290FC66D006956A2 /* ShopViewModel.swift */; };
+		92F808F3290FC6BB006956A2 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92F808F2290FC6BB006956A2 /* RxAlamofire */; };
+		92F808F5290FC6CF006956A2 /* ShopAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808F4290FC6CF006956A2 /* ShopAPIManager.swift */; };
+		92F808F8290FC826006956A2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808F7290FC826006956A2 /* Product.swift */; };
 		92F80ED32905646B00938A01 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92F80ED22905646B00938A01 /* SnapKit */; };
 		92F80ED62905647400938A01 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 92F80ED52905647400938A01 /* Then */; };
-		92F80ED92905648300938A01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92F80ED82905648300938A01 /* Alamofire */; };
 		92F80EDB2905695D00938A01 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F80EDA2905695D00938A01 /* Photo.swift */; };
 		92F80EDD29056A9800938A01 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F80EDC29056A9800938A01 /* ListCollectionViewCell.swift */; };
 		92F80EDF29056E0E00938A01 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F80EDE29056E0E00938A01 /* ListViewModel.swift */; };
@@ -70,6 +74,10 @@
 		929DA5DA29028A4300810B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929DA5DD29028A4300810B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		929DA5DF29028A4300810B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92F808ED290FC663006956A2 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		92F808EF290FC66D006956A2 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		92F808F4290FC6CF006956A2 /* ShopAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAPIManager.swift; sourceTree = "<group>"; };
+		92F808F7290FC826006956A2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		92F80EDA2905695D00938A01 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		92F80EDC29056A9800938A01 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		92F80EDE29056E0E00938A01 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
@@ -86,10 +94,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F80ED92905648300938A01 /* Alamofire in Frameworks */,
 				92F80ED32905646B00938A01 /* SnapKit in Frameworks */,
 				92F80F05290659E500938A01 /* RxSwift in Frameworks */,
 				92F80F03290659E500938A01 /* RxCocoa in Frameworks */,
+				92F808F3290FC6BB006956A2 /* RxAlamofire in Frameworks */,
 				92F80ED62905647400938A01 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +196,7 @@
 		9265DD942907CC94005D56BE /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				92F808EA290FC45C006956A2 /* Naver */,
 				924CA436290EC0BE00C0BB0C /* Login */,
 				9265DD932907CC87005D56BE /* SearchPhoto */,
 				92F80EE62905719500938A01 /* List */,
@@ -291,6 +300,7 @@
 		929DA5E829028A6400810B2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				92F808E9290FC422006956A2 /* RxAlamofire+RxDataSource */,
 				924CA439290ECF4F00C0BB0C /* ReactiveSearch */,
 				928135F1290AD46900700AA6 /* Login */,
 				9265DD8B2907CBA8005D56BE /* SearchPhoto */,
@@ -331,6 +341,48 @@
 			isa = PBXGroup;
 			children = (
 				92F80EDA2905695D00938A01 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92F808E9290FC422006956A2 /* RxAlamofire+RxDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				92F808F6290FC81C006956A2 /* Model */,
+				92F808EC290FC654006956A2 /* View */,
+				92F808EB290FC64B006956A2 /* ViewModel */,
+			);
+			path = "RxAlamofire+RxDataSource";
+			sourceTree = "<group>";
+		};
+		92F808EA290FC45C006956A2 /* Naver */ = {
+			isa = PBXGroup;
+			children = (
+				92F808F4290FC6CF006956A2 /* ShopAPIManager.swift */,
+			);
+			path = Naver;
+			sourceTree = "<group>";
+		};
+		92F808EB290FC64B006956A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92F808EF290FC66D006956A2 /* ShopViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92F808EC290FC654006956A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92F808ED290FC663006956A2 /* ShopViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92F808F6290FC81C006956A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92F808F7290FC826006956A2 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,9 +439,9 @@
 			packageProductDependencies = (
 				92F80ED22905646B00938A01 /* SnapKit */,
 				92F80ED52905647400938A01 /* Then */,
-				92F80ED82905648300938A01 /* Alamofire */,
 				92F80F02290659E500938A01 /* RxCocoa */,
 				92F80F04290659E500938A01 /* RxSwift */,
+				92F808F2290FC6BB006956A2 /* RxAlamofire */,
 			);
 			productName = WhatsNew;
 			productReference = 929DA5CE29028A4200810B2A /* WhatsNew.app */;
@@ -422,8 +474,8 @@
 			packageReferences = (
 				92F80ED12905646B00938A01 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				92F80ED42905647400938A01 /* XCRemoteSwiftPackageReference "Then" */,
-				92F80ED72905648300938A01 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				92F80F01290659E500938A01 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				92F808F1290FC6BB006956A2 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
 			);
 			productRefGroup = 929DA5CF29028A4200810B2A /* Products */;
 			projectDirPath = "";
@@ -453,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92F808F0290FC66D006956A2 /* ShopViewModel.swift in Sources */,
 				928135FA290B4B4400700AA6 /* LoginViewModel.swift in Sources */,
 				928135F6290B4B3700700AA6 /* LoginViewController.swift in Sources */,
 				9265DD982907D134005D56BE /* SearchPhoto.swift in Sources */,
@@ -465,8 +518,10 @@
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
 				9265DD902907CBCF005D56BE /* SearchPhotoViewController.swift in Sources */,
 				92F80F0D29067AD200938A01 /* SimplePickerViewExampleViewController.swift in Sources */,
+				92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */,
 				9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */,
 				9265DD922907CC13005D56BE /* SearchPhotoViewModel.swift in Sources */,
+				92F808F5290FC6CF006956A2 /* ShopAPIManager.swift in Sources */,
 				928135F8290B4B3C00700AA6 /* LoginRequest.swift in Sources */,
 				92F80EDD29056A9800938A01 /* ListCollectionViewCell.swift in Sources */,
 				928135FC290B4BE500700AA6 /* LoginResponse.swift in Sources */,
@@ -478,6 +533,7 @@
 				9265DD962907CCAE005D56BE /* SearchPhotoAPIManager.swift in Sources */,
 				929DA5D229028A4200810B2A /* AppDelegate.swift in Sources */,
 				9265DD852907AA57005D56BE /* SimpleTableViewController.swift in Sources */,
+				92F808F8290FC826006956A2 /* Product.swift in Sources */,
 				929DA5D429028A4200810B2A /* SceneDelegate.swift in Sources */,
 				92F80EE82905719E00938A01 /* ListAPIManager.swift in Sources */,
 			);
@@ -699,6 +755,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		92F808F1290FC6BB006956A2 /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.1.2;
+			};
+		};
 		92F80ED12905646B00938A01 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -715,14 +779,6 @@
 				kind = branch;
 			};
 		};
-		92F80ED72905648300938A01 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		92F80F01290659E500938A01 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -734,6 +790,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		92F808F2290FC6BB006956A2 /* RxAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92F808F1290FC6BB006956A2 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
 		92F80ED22905646B00938A01 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 92F80ED12905646B00938A01 /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -743,11 +804,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 92F80ED42905647400938A01 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
-		};
-		92F80ED82905648300938A01 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 92F80ED72905648300938A01 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		92F80F02290659E500938A01 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;

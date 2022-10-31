@@ -13,3 +13,12 @@ enum URLConstant {
     static let searchURL = baseURL + "/search/photos"
     static let listURL = baseURL + "/photos"
 }
+
+extension URLConstant {
+    static let naverBaseURL = "https://openapi.naver.com/v1"
+    
+    static let naverSearchURL = naverBaseURL + "/search"
+    
+    static let shopURL = naverSearchURL + "/shop.json"
+    static let blogURL = naverSearchURL + "/blog.json"
+}
