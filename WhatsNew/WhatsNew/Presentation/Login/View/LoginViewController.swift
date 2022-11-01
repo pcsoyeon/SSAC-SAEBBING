@@ -82,34 +82,40 @@ extension LoginViewController: BaseViewControllerAttribute {
     }
     
     func bind() {
-        viewModel.emailRelay
+        let input = LoginViewModel.Input(emailText: emailTextField.rx.text,
+                                         passwordText: passwordTextField.rx.text,
+                                         loginTap: loginButton.rx.tap)
+        
+        let output = viewModel.transform(from: input)
+        
+//        viewModel.emailRelay
+        output.emailRelay
             .bind(to: emailTextField.rx.text)
             .disposed(by: disposeBag)
-        viewModel.passwordRelay
+        
+//        viewModel.passwordRelay
+        output.passwordRelay
             .bind(to: passwordTextField.rx.text)
             .disposed(by: disposeBag)
         
-        emailTextField.rx.text.orEmpty
+        output.emailText
             .bind(to: viewModel.emailRelay)
             .disposed(by: disposeBag)
         
-        passwordTextField.rx.text.orEmpty
+        output.passwordText
             .bind(to: viewModel.passwordRelay)
             .disposed(by: disposeBag)
         
-        let isValid = viewModel.isValid
-            .share()
-        
-        isValid
-            .bind(to: loginButton.rx.isEnabled)
+        output.isValid
+            .drive(loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        isValid
+        output.isValid
             .map { $0 == true ? UIColor.systemPink : UIColor.systemGray4 }
-            .bind(to: loginButton.rx.backgroundColor)
+            .drive(loginButton.rx.backgroundColor)
             .disposed(by: disposeBag)
         
-        loginButton.rx.tap
+        output.loginTap
             .withUnretained(self)
             .bind { vc, _ in
                 let request = LoginRequest(email: vc.viewModel.emailRelay.value, password: vc.viewModel.passwordRelay.value)
@@ -117,7 +123,7 @@ extension LoginViewController: BaseViewControllerAttribute {
             }
             .disposed(by: disposeBag)
         
-        viewModel.isLoginSucceed
+        output.isLoginSucceed
             .withUnretained(self)
             .subscribe { vc, response in
                 vc.presentAlert("로그인 성공", "\(response.name)님 환영합니다.")
