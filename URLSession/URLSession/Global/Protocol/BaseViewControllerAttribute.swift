@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol BaseViewController {
-    
+protocol BaseViewControllerAttribute {
+    func configureHierarchy()
+    func setAttribute()
+    func bind()
 }
