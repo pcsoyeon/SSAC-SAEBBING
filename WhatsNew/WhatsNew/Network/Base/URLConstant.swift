@@ -19,6 +19,6 @@ extension URLConstant {
     
     static let naverSearchURL = naverBaseURL + "/search"
     
-    static let shopURL = naverSearchURL + "/shop.json"
-    static let blogURL = naverSearchURL + "/blog.json"
+    static let shopURL = "/shop.json"
+    static let blogURL = "/blog.json"
 }

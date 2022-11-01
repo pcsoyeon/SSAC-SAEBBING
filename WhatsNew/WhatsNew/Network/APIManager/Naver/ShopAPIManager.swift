@@ -19,11 +19,11 @@ final class ShopAPIManager {
     
     private init() { }
     
-    private let url = URLConstant.shopURL
+    private let url = URLConstant.naverSearchURL + URLConstant.shopURL
     
     private let headers: HTTPHeaders = [
         "X-Naver-Client-Id": APIKey.naverClientId,
-        "X-Naver-Client-Secret": APIKey.naverClientSecret,
+        "X-Naver-Client-Secret": APIKey.naverClientSecret
     ]
     
     func requestShop(with query: String, completionHandler: @escaping ([Product]) -> Void) {

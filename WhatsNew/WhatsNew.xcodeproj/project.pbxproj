@@ -29,6 +29,7 @@
 		929DA5D929028A4200810B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5D729028A4200810B2A /* Main.storyboard */; };
 		929DA5DB29028A4300810B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5DA29028A4300810B2A /* Assets.xcassets */; };
 		929DA5DE29028A4300810B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5DC29028A4300810B2A /* LaunchScreen.storyboard */; };
+		92DE76D8290FF724004474C6 /* NaverSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */; };
 		92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808ED290FC663006956A2 /* ShopViewController.swift */; };
 		92F808F0290FC66D006956A2 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808EF290FC66D006956A2 /* ShopViewModel.swift */; };
 		92F808F3290FC6BB006956A2 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92F808F2290FC6BB006956A2 /* RxAlamofire */; };
@@ -74,6 +75,7 @@
 		929DA5DA29028A4300810B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929DA5DD29028A4300810B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		929DA5DF29028A4300810B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSearchRouter.swift; sourceTree = "<group>"; };
 		92F808ED290FC663006956A2 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		92F808EF290FC66D006956A2 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
 		92F808F4290FC6CF006956A2 /* ShopAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAPIManager.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				92F808F4290FC6CF006956A2 /* ShopAPIManager.swift */,
+				92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */,
 			);
 			path = Naver;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				928135F6290B4B3700700AA6 /* LoginViewController.swift in Sources */,
 				9265DD982907D134005D56BE /* SearchPhoto.swift in Sources */,
 				924CA43D290ECF7700C0BB0C /* ReactiveSearchViewController.swift in Sources */,
+				92DE76D8290FF724004474C6 /* NaverSearchRouter.swift in Sources */,
 				92F80EDB2905695D00938A01 /* Photo.swift in Sources */,
 				924CA438290EC0CB00C0BB0C /* LoginAPIManager.swift in Sources */,
 				924CA43F290ECFEE00C0BB0C /* ReactiveSearchViewModel.swift in Sources */,

@@ -49,7 +49,7 @@ extension ShopViewController: BaseViewControllerAttribute {
     
     func bind() {
         viewModel.itemRelay
-            .asDriver(onErrorJustReturn: [Product(title: "", link: "", image: "", lprice: "", hprice: "", mallName: "", productId: "", productType: "", maker: "", brand: "", category1: "", category2: "", category3: "", category4: "")])
+            .asDriver(onErrorJustReturn: [])
             .drive { productList in
                 dump(productList)
             } onCompleted: {
@@ -59,6 +59,5 @@ extension ShopViewController: BaseViewControllerAttribute {
             }
             .disposed(by: disposeBag)
 
-        viewModel.requestSearch(with: "맥북")
     }
 }

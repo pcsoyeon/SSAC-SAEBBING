@@ -7,17 +7,26 @@
 
 import Foundation
 
+import Alamofire
+import RxAlamofire
 import RxCocoa
 import RxSwift
+
+enum APIError: Error {
+    case badUrl
+    case invalidResponse
+    case failed(Int)
+    case invalidData
+    case noData
+}
 
 final class ShopViewModel {
     
     var itemRelay = PublishRelay<[Product]>()
+    private let disposeBag = DisposeBag()
     
-    func requestSearch(with query: String) {
-        ShopAPIManager.shared.requestShop(with: query) { [weak self] productList in
-            guard let self = self else { return }
-            self.itemRelay.accept(productList)
-        }
+    func requestWithURLSession(query: String, display: Int = 10) {
+        
     }
+    
 }
