@@ -16,6 +16,7 @@ final class ProfileViewModel {
     
     var name = BehaviorRelay<String>(value: "")
     var email = BehaviorRelay<String>(value: "")
+    var userImageURL = PublishRelay<String>()
     
     func requestProfile() {
         let api = AuthAPI.profile
@@ -28,9 +29,13 @@ final class ProfileViewModel {
                 case .success(let data):
                     self.name.accept(data.user.username)
                     self.email.accept(data.user.email)
+                    self.userImageURL.accept(data.user.photo)
                     
                 case .failure(let error):
-                    print(response.response?.statusCode)
+                    print(error)
+                    self.name.accept("유저 이름 정보가 없습니다.")
+                    self.email.accept("유저 이메일 정보가 없습니다.")
+                    self.userImageURL.accept("")
                 }
             }
     }

@@ -16,7 +16,9 @@ class ProfileViewController: UIViewController {
     
     // MARK: - UI Property
     
-    private var userImageView = UIImageView()
+    private var userImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+    }
     
     private var userNameLabel = UILabel().then {
         $0.textColor = .darkGray
@@ -80,6 +82,25 @@ extension ProfileViewController: BaseViewControllerAttribute {
         viewModel.email
             .asDriver()
             .drive(userEmailLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.userImageURL
+            .asDriver(onErrorJustReturn: "")
+            .drive { urlString in
+                let url = URL(string: urlString)!
+                
+                DispatchQueue.global().async { [weak self] in
+                    guard let self = self else { return }
+                    
+                    if let data = try? Data(contentsOf: url) {
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                self.userImageView.image = image
+                            }
+                        }
+                    }
+                }
+            }
             .disposed(by: disposeBag)
     }
     
