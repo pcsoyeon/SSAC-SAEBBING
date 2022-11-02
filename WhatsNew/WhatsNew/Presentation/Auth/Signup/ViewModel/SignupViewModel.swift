@@ -45,11 +45,8 @@ final class SignupViewModel {
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let value = response.value else { return }
                 
-                print(statusCode)
-                
                 switch statusCode {
                 case 200..<300:
-                    print(value)
                     self.isSucceed.accept(true)
                 default:
                     self.isSucceed.accept(false)
