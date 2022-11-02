@@ -86,12 +86,48 @@ extension SignupViewController: BaseViewControllerAttribute {
     }
     
     func bind() {
+        viewModel.userName
+            .asDriver()
+            .drive(userNameTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.email
+            .asDriver()
+            .drive(emailTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.password
+            .asDriver()
+            .drive(passwordTextField.rx.text)
+            .disposed(by: disposeBag)
+        
         userNameTextField.rx.text.orEmpty
             .asDriver()
             .drive(onNext: { [weak self] text in
                 guard let self = self else { return }
                 self.viewModel.userName.accept(text)
             })
+            .disposed(by: disposeBag)
+        
+        userNameTextField.rx.controlEvent([.editingDidBegin])
+            .withUnretained(self)
+            .bind { vc, _ in
+                vc.viewModel.userName.accept("")
+            }
+            .disposed(by: disposeBag)
+        
+        emailTextField.rx.controlEvent([.editingDidBegin])
+            .withUnretained(self)
+            .bind { vc, _ in
+                vc.viewModel.email.accept("")
+            }
+            .disposed(by: disposeBag)
+        
+        passwordTextField.rx.controlEvent([.editingDidBegin])
+            .withUnretained(self)
+            .bind { vc, _ in
+                vc.viewModel.password.accept("")
+            }
             .disposed(by: disposeBag)
         
         emailTextField.rx.text.orEmpty
@@ -132,20 +168,17 @@ extension SignupViewController: BaseViewControllerAttribute {
             .withUnretained(self)
             .observe(on: MainScheduler.instance)
             .subscribe { vc, value in
-                
                 if value {
                     vc.navigationController?.pushViewController(SigninViewController(), animated: true)
                 }
-                
             } onError: { error in
-                self.presentAlert("로그인 실패", "\(error)")
+                self.presentAlert("회원가입 실패", "\(error)")
             } onCompleted: {
                 print("======== 완료")
             } onDisposed: {
                 print("======== 버려")
             }
             .disposed(by: disposeBag)
-
     }
     
     private func presentAlert(_ title: String, _ message: String) {

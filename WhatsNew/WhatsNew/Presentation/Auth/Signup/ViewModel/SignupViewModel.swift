@@ -15,9 +15,9 @@ final class SignupViewModel {
     
     // MARK: - Relay Property
     
-    var userName = BehaviorRelay<String>(value: "")
-    var email = BehaviorRelay<String>(value: "")
-    var password = BehaviorRelay<String>(value: "")
+    var userName = BehaviorRelay<String>(value: "닉네임을 입력해주세요")
+    var email = BehaviorRelay<String>(value: "이메일을 입력해주세요")
+    var password = BehaviorRelay<String>(value: "비밀번호를 입력해주세요")
     
     var isValid: Observable<Bool> {
         return Observable
@@ -28,7 +28,7 @@ final class SignupViewModel {
             }
     }
     
-    var isSucceed = BehaviorRelay<Bool>(value: false)
+    var isSucceed = BehaviorSubject<Bool>(value: false)
     
     // MARK: - Request Method
     
@@ -43,13 +43,16 @@ final class SignupViewModel {
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
-                guard let value = response.value else { return }
                 
                 switch statusCode {
                 case 200..<300:
-                    self.isSucceed.accept(true)
+                    self.isSucceed.onNext(true)
+                case 400..<500:
+                    self.isSucceed.onError(NetworkError.badRequest)
+                case 500..<600:
+                    self.isSucceed.onError(NetworkError.serverError)
                 default:
-                    self.isSucceed.accept(false)
+                    self.isSucceed.onError(NetworkError.networkFail)
                 }
                 
             case .failure:

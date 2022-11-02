@@ -11,11 +11,6 @@ import Alamofire
 import RxCocoa
 import RxSwift
 
-enum LoginError: Error {
-    case badRequest
-    case serverError
-}
-
 final class LoginViewModel {
     
     let emailRelay = BehaviorRelay<String>(value: "이메일을 입력해주세요")
@@ -94,13 +89,13 @@ final class LoginViewModel {
                 if statusCode == 200 {
                     self.isLoginSucceed.onNext(value)
                 } else if statusCode == 400 {
-                    self.isLoginSucceed.onError(LoginError.badRequest)
+                    self.isLoginSucceed.onError(NetworkError.badRequest)
                 } else if statusCode  == 500 {
-                    self.isLoginSucceed.onError(LoginError.serverError)
+                    self.isLoginSucceed.onError(NetworkError.serverError)
                 }
                 
             case .failure(let error):
-                self.isLoginSucceed.onError(LoginError.badRequest)
+                self.isLoginSucceed.onError(NetworkError.badRequest)
                 print(error)
             }
         }

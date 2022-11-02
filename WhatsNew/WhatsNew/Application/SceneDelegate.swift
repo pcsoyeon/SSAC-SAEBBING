@@ -20,9 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         // 첫화면 분기처리
-//        window?.rootViewController = UINavigationController(rootViewController: SignupViewController())
-        
-        window?.rootViewController = UINavigationController(rootViewController: SigninViewController())
+        window?.rootViewController = UINavigationController(rootViewController: SignupViewController())
         window?.makeKeyAndVisible()
     }
 
