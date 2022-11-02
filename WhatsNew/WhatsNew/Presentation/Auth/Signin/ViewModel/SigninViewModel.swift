@@ -42,6 +42,7 @@ final class SigninViewModel {
                     
                     switch statusCode {
                     case 200..<300:
+                        UserDefaults.standard.set(value.token, forKey: "token")
                         self.isSucceed.accept(true)
                     default:
                         self.isSucceed.accept(false)

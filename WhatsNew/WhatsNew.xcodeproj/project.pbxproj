@@ -37,6 +37,8 @@
 		92B7B6B92912546300E0336C /* SigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6B82912546300E0336C /* SigninViewModel.swift */; };
 		92B7B6BB291255D200E0336C /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6BA291255D200E0336C /* Signin.swift */; };
 		92B7B6BF291256F900E0336C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6BE291256F900E0336C /* ProfileViewController.swift */; };
+		92B7B6C129125A9200E0336C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6C029125A9200E0336C /* ProfileViewModel.swift */; };
+		92B7B6C429125AE900E0336C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6C329125AE900E0336C /* Profile.swift */; };
 		92DE76D8290FF724004474C6 /* NaverSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */; };
 		92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808ED290FC663006956A2 /* ShopViewController.swift */; };
 		92F808F0290FC66D006956A2 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808EF290FC66D006956A2 /* ShopViewModel.swift */; };
@@ -91,6 +93,8 @@
 		92B7B6B82912546300E0336C /* SigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewModel.swift; sourceTree = "<group>"; };
 		92B7B6BA291255D200E0336C /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
 		92B7B6BE291256F900E0336C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		92B7B6C029125A9200E0336C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		92B7B6C329125AE900E0336C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSearchRouter.swift; sourceTree = "<group>"; };
 		92F808ED290FC663006956A2 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		92F808EF290FC66D006956A2 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
@@ -398,6 +402,7 @@
 		92B7B69D29123A0D00E0336C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				92B7B6C229125AE300E0336C /* Model */,
 				92B7B6BD291256EC00E0336C /* View */,
 				92B7B6BC291256E600E0336C /* ViewModel */,
 			);
@@ -470,6 +475,7 @@
 		92B7B6BC291256E600E0336C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				92B7B6C029125A9200E0336C /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -480,6 +486,14 @@
 				92B7B6BE291256F900E0336C /* ProfileViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92B7B6C229125AE300E0336C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6C329125AE900E0336C /* Profile.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		92F808E9290FC422006956A2 /* RxAlamofire+RxDataSource */ = {
@@ -667,6 +681,7 @@
 				92B7B6B92912546300E0336C /* SigninViewModel.swift in Sources */,
 				92F80EDD29056A9800938A01 /* ListCollectionViewCell.swift in Sources */,
 				92B7B6BF291256F900E0336C /* ProfileViewController.swift in Sources */,
+				92B7B6C129125A9200E0336C /* ProfileViewModel.swift in Sources */,
 				928135FC290B4BE500700AA6 /* LoginResponse.swift in Sources */,
 				92B7B6BB291255D200E0336C /* Signin.swift in Sources */,
 				92F80EEC290571F100938A01 /* APIKey.swift in Sources */,
@@ -674,6 +689,7 @@
 				92F80EDF29056E0E00938A01 /* ListViewModel.swift in Sources */,
 				9265DD892907BECF005D56BE /* RxCocoaInitialViewController.swift in Sources */,
 				929DA5D629028A4200810B2A /* ListViewController.swift in Sources */,
+				92B7B6C429125AE900E0336C /* Profile.swift in Sources */,
 				9265DD872907B1F3005D56BE /* RxCocoaExampleViewController.swift in Sources */,
 				9265DD962907CCAE005D56BE /* SearchPhotoAPIManager.swift in Sources */,
 				92B7B6B7291248A000E0336C /* SigninViewController.swift in Sources */,
