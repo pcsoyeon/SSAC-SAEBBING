@@ -20,7 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         // 첫화면 분기처리
-        window?.rootViewController = UINavigationController(rootViewController: SignupViewController())
+        if UserDefaults.standard.string(forKey: "token") != "" {
+            window?.rootViewController = UINavigationController(rootViewController: SigninViewController())
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: SignupViewController())
+        }
+        
         window?.makeKeyAndVisible()
     }
 
