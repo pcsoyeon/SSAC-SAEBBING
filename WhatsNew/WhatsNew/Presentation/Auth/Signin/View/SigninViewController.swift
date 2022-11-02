@@ -79,7 +79,12 @@ extension SigninViewController: BaseViewControllerAttribute {
     }
     
     func bind() {
-        emailTextField.rx.text.orEmpty
+        let input = SigninViewModel.Input(emailText: emailTextField.rx.text,
+                                          passwordText: passwordTextField.rx.text,
+                                          signinTap: signinButton.rx.tap)
+        let output = viewModel.transform(from: input)
+        
+        output.emailText
             .asDriver()
             .drive(onNext: { [weak self] text in
                 guard let self = self else { return }
@@ -87,7 +92,7 @@ extension SigninViewController: BaseViewControllerAttribute {
             })
             .disposed(by: disposeBag)
         
-        passwordTextField.rx.text.orEmpty
+        output.passwordText
             .asDriver()
             .drive(onNext: { [weak self] text in
                 guard let self = self else { return }
@@ -106,14 +111,14 @@ extension SigninViewController: BaseViewControllerAttribute {
             .drive(signinButton.rx.backgroundColor)
             .disposed(by: disposeBag)
         
-        signinButton.rx.tap
+        output.signinTap
             .withUnretained(self)
             .bind { vc, _ in
                 vc.viewModel.requestSignin()
             }
             .disposed(by: disposeBag)
         
-        viewModel.isSucceed
+        output.isSucceed
             .withUnretained(self)
             .observe(on: MainScheduler.instance)
             .subscribe { vc, value in

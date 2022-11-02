@@ -26,6 +26,30 @@ final class SigninViewModel {
     
     var isSucceed = BehaviorRelay<Bool>(value: false)
     
+    struct Input {
+        let emailText: ControlProperty<String?>
+        let passwordText: ControlProperty<String?>
+        let signinTap: ControlEvent<Void>
+    }
+    
+    struct Output {
+        let emailText: ControlProperty<String>
+        let passwordText: ControlProperty<String>
+        let signinTap: ControlEvent<Void>
+        
+        let isSucceed: BehaviorRelay<Bool>
+    }
+    
+    func transform(from input: Input) -> Output {
+        let emailText = input.emailText.orEmpty
+        let passwordText = input.passwordText.orEmpty
+        
+        return Output(emailText: emailText,
+                      passwordText: passwordText,
+                      signinTap: input.signinTap,
+                      isSucceed: isSucceed)
+    }
+    
     func requestSignin() {
         let api = AuthAPI.login(email: email.value, password: password.value)
         
