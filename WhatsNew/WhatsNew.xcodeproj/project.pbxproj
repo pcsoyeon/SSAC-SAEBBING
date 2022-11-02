@@ -29,6 +29,9 @@
 		929DA5D929028A4200810B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5D729028A4200810B2A /* Main.storyboard */; };
 		929DA5DB29028A4300810B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5DA29028A4300810B2A /* Assets.xcassets */; };
 		929DA5DE29028A4300810B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5DC29028A4300810B2A /* LaunchScreen.storyboard */; };
+		92B7B6A129123A7B00E0336C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6A029123A7B00E0336C /* SignupView.swift */; };
+		92B7B6A329123A8500E0336C /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6A229123A8500E0336C /* SignupViewModel.swift */; };
+		92B7B6AC29123F8B00E0336C /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6AB29123F8B00E0336C /* AuthRouter.swift */; };
 		92DE76D8290FF724004474C6 /* NaverSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */; };
 		92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808ED290FC663006956A2 /* ShopViewController.swift */; };
 		92F808F0290FC66D006956A2 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808EF290FC66D006956A2 /* ShopViewModel.swift */; };
@@ -75,6 +78,9 @@
 		929DA5DA29028A4300810B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929DA5DD29028A4300810B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		929DA5DF29028A4300810B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92B7B6A029123A7B00E0336C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		92B7B6A229123A8500E0336C /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		92B7B6AB29123F8B00E0336C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSearchRouter.swift; sourceTree = "<group>"; };
 		92F808ED290FC663006956A2 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		92F808EF290FC66D006956A2 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 		9265DD942907CC94005D56BE /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				92B7B6A429123C5700E0336C /* Auth */,
 				92F808EA290FC45C006956A2 /* Naver */,
 				924CA436290EC0BE00C0BB0C /* Login */,
 				9265DD932907CC87005D56BE /* SearchPhoto */,
@@ -302,6 +309,7 @@
 		929DA5E829028A6400810B2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				92B7B69A291239E900E0336C /* Auth */,
 				92F808E9290FC422006956A2 /* RxAlamofire+RxDataSource */,
 				924CA439290ECF4F00C0BB0C /* ReactiveSearch */,
 				928135F1290AD46900700AA6 /* Login */,
@@ -343,6 +351,71 @@
 			isa = PBXGroup;
 			children = (
 				92F80EDA2905695D00938A01 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92B7B69A291239E900E0336C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B69D29123A0D00E0336C /* Profile */,
+				92B7B69C291239FD00E0336C /* Signin */,
+				92B7B69B291239F300E0336C /* Signup */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		92B7B69B291239F300E0336C /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6AA29123CEE00E0336C /* Model */,
+				92B7B6A929123CEA00E0336C /* View */,
+				92B7B6A829123CE400E0336C /* ViewModel */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		92B7B69C291239FD00E0336C /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		92B7B69D29123A0D00E0336C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		92B7B6A429123C5700E0336C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6AB29123F8B00E0336C /* AuthRouter.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		92B7B6A829123CE400E0336C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6A229123A8500E0336C /* SignupViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92B7B6A929123CEA00E0336C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6A029123A7B00E0336C /* SignupView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92B7B6AA29123CEE00E0336C /* Model */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -522,6 +595,7 @@
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
 				9265DD902907CBCF005D56BE /* SearchPhotoViewController.swift in Sources */,
 				92F80F0D29067AD200938A01 /* SimplePickerViewExampleViewController.swift in Sources */,
+				92B7B6AC29123F8B00E0336C /* AuthRouter.swift in Sources */,
 				92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */,
 				9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */,
 				9265DD922907CC13005D56BE /* SearchPhotoViewModel.swift in Sources */,
@@ -530,6 +604,7 @@
 				92F80EDD29056A9800938A01 /* ListCollectionViewCell.swift in Sources */,
 				928135FC290B4BE500700AA6 /* LoginResponse.swift in Sources */,
 				92F80EEC290571F100938A01 /* APIKey.swift in Sources */,
+				92B7B6A129123A7B00E0336C /* SignupView.swift in Sources */,
 				92F80EDF29056E0E00938A01 /* ListViewModel.swift in Sources */,
 				9265DD892907BECF005D56BE /* RxCocoaInitialViewController.swift in Sources */,
 				929DA5D629028A4200810B2A /* ListViewController.swift in Sources */,
@@ -538,6 +613,7 @@
 				929DA5D229028A4200810B2A /* AppDelegate.swift in Sources */,
 				9265DD852907AA57005D56BE /* SimpleTableViewController.swift in Sources */,
 				92F808F8290FC826006956A2 /* Product.swift in Sources */,
+				92B7B6A329123A8500E0336C /* SignupViewModel.swift in Sources */,
 				929DA5D429028A4200810B2A /* SceneDelegate.swift in Sources */,
 				92F80EE82905719E00938A01 /* ListAPIManager.swift in Sources */,
 			);
