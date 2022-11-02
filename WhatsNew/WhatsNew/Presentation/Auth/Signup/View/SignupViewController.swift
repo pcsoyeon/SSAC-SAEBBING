@@ -21,7 +21,6 @@ final class SignupViewController: UIViewController {
     private var passwordTextField = UITextField()
     
     private var signupButton = UIButton().then {
-        $0.backgroundColor = .systemPink
         $0.setTitle("회원가입", for: .normal)
         $0.setTitleColor(.white, for: .normal)
     }
@@ -33,6 +32,11 @@ final class SignupViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     // MARK: - Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +53,8 @@ extension SignupViewController: BaseViewControllerAttribute {
         }
         
         userNameTextField.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
             make.height.equalTo(50)
         }
         
@@ -105,18 +110,48 @@ extension SignupViewController: BaseViewControllerAttribute {
             })
             .disposed(by: disposeBag)
         
+        viewModel.isValid
+            .asDriver(onErrorJustReturn: false)
+            .drive(signupButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        viewModel.isValid
+            .map { $0 == true ? UIColor.systemPink : UIColor.systemGray4 }
+            .asDriver(onErrorJustReturn: .systemGray4)
+            .drive(signupButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        
         signupButton.rx.tap
             .withUnretained(self)
-            .subscribe(onNext: { vc, _ in
+            .bind { vc, _ in
                 vc.viewModel.requestSignin()
-            }, onError: { error in
-                print(error)
-            }, onCompleted: {
-                print("======== 완료")
-            }, onDisposed: {
-                print("======== 버려")
-            })
+            }
             .disposed(by: disposeBag)
 
+        viewModel.isSucceed
+            .withUnretained(self)
+            .observe(on: MainScheduler.instance)
+            .subscribe { vc, value in
+                
+                if value {
+                    vc.navigationController?.pushViewController(SigninViewController(), animated: true)
+                }
+                
+            } onError: { error in
+                self.presentAlert("로그인 실패", "\(error)")
+            } onCompleted: {
+                print("======== 완료")
+            } onDisposed: {
+                print("======== 버려")
+            }
+            .disposed(by: disposeBag)
+
+    }
+    
+    private func presentAlert(_ title: String, _ message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(ok)
+        self.present(alert, animated: true, completion: nil)
     }
 }

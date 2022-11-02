@@ -29,9 +29,11 @@
 		929DA5D929028A4200810B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5D729028A4200810B2A /* Main.storyboard */; };
 		929DA5DB29028A4300810B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5DA29028A4300810B2A /* Assets.xcassets */; };
 		929DA5DE29028A4300810B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929DA5DC29028A4300810B2A /* LaunchScreen.storyboard */; };
-		92B7B6A129123A7B00E0336C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6A029123A7B00E0336C /* SignupView.swift */; };
+		92B7B6A129123A7B00E0336C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6A029123A7B00E0336C /* SignupViewController.swift */; };
 		92B7B6A329123A8500E0336C /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6A229123A8500E0336C /* SignupViewModel.swift */; };
-		92B7B6AC29123F8B00E0336C /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6AB29123F8B00E0336C /* AuthRouter.swift */; };
+		92B7B6B0291240A200E0336C /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6AF291240A200E0336C /* AuthAPI.swift */; };
+		92B7B6B2291245C800E0336C /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6B1291245C800E0336C /* NetworkResult.swift */; };
+		92B7B6B7291248A000E0336C /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6B6291248A000E0336C /* SigninViewController.swift */; };
 		92DE76D8290FF724004474C6 /* NaverSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */; };
 		92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808ED290FC663006956A2 /* ShopViewController.swift */; };
 		92F808F0290FC66D006956A2 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808EF290FC66D006956A2 /* ShopViewModel.swift */; };
@@ -78,9 +80,11 @@
 		929DA5DA29028A4300810B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929DA5DD29028A4300810B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		929DA5DF29028A4300810B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92B7B6A029123A7B00E0336C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		92B7B6A029123A7B00E0336C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		92B7B6A229123A8500E0336C /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
-		92B7B6AB29123F8B00E0336C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		92B7B6AF291240A200E0336C /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		92B7B6B1291245C800E0336C /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		92B7B6B6291248A000E0336C /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSearchRouter.swift; sourceTree = "<group>"; };
 		92F808ED290FC663006956A2 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		92F808EF290FC66D006956A2 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
@@ -204,7 +208,6 @@
 		9265DD942907CC94005D56BE /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
-				92B7B6A429123C5700E0336C /* Auth */,
 				92F808EA290FC45C006956A2 /* Naver */,
 				924CA436290EC0BE00C0BB0C /* Login */,
 				9265DD932907CC87005D56BE /* SearchPhoto */,
@@ -300,6 +303,7 @@
 		929DA5E729028A5900810B2A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				92B7B6AD2912406700E0336C /* Router */,
 				9265DD942907CC94005D56BE /* APIManager */,
 				92F80EE52905718F00938A01 /* Base */,
 			);
@@ -378,6 +382,9 @@
 		92B7B69C291239FD00E0336C /* Signin */ = {
 			isa = PBXGroup;
 			children = (
+				92B7B6B52912489100E0336C /* Model */,
+				92B7B6B42912488C00E0336C /* View */,
+				92B7B6B32912488300E0336C /* ViewModel */,
 			);
 			path = Signin;
 			sourceTree = "<group>";
@@ -387,14 +394,6 @@
 			children = (
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		92B7B6A429123C5700E0336C /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				92B7B6AB29123F8B00E0336C /* AuthRouter.swift */,
-			);
-			path = Auth;
 			sourceTree = "<group>";
 		};
 		92B7B6A829123CE400E0336C /* ViewModel */ = {
@@ -408,12 +407,50 @@
 		92B7B6A929123CEA00E0336C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				92B7B6A029123A7B00E0336C /* SignupView.swift */,
+				92B7B6A029123A7B00E0336C /* SignupViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
 		92B7B6AA29123CEE00E0336C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92B7B6AD2912406700E0336C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6AE2912407500E0336C /* Auth */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		92B7B6AE2912407500E0336C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6AF291240A200E0336C /* AuthAPI.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		92B7B6B32912488300E0336C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92B7B6B42912488C00E0336C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6B6291248A000E0336C /* SigninViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92B7B6B52912489100E0336C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -476,6 +513,7 @@
 			children = (
 				92F80EE32905718C00938A01 /* URLConstant.swift */,
 				92F80EEB290571F100938A01 /* APIKey.swift */,
+				92B7B6B1291245C800E0336C /* NetworkResult.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -584,6 +622,7 @@
 				92F808F0290FC66D006956A2 /* ShopViewModel.swift in Sources */,
 				928135FA290B4B4400700AA6 /* LoginViewModel.swift in Sources */,
 				928135F6290B4B3700700AA6 /* LoginViewController.swift in Sources */,
+				92B7B6B2291245C800E0336C /* NetworkResult.swift in Sources */,
 				9265DD982907D134005D56BE /* SearchPhoto.swift in Sources */,
 				924CA43D290ECF7700C0BB0C /* ReactiveSearchViewController.swift in Sources */,
 				92DE76D8290FF724004474C6 /* NaverSearchRouter.swift in Sources */,
@@ -595,7 +634,6 @@
 				92F80EE22905706C00938A01 /* CObservable.swift in Sources */,
 				9265DD902907CBCF005D56BE /* SearchPhotoViewController.swift in Sources */,
 				92F80F0D29067AD200938A01 /* SimplePickerViewExampleViewController.swift in Sources */,
-				92B7B6AC29123F8B00E0336C /* AuthRouter.swift in Sources */,
 				92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */,
 				9265DD7B29075F70005D56BE /* SimpleTextFieldViewController.swift in Sources */,
 				9265DD922907CC13005D56BE /* SearchPhotoViewModel.swift in Sources */,
@@ -604,17 +642,19 @@
 				92F80EDD29056A9800938A01 /* ListCollectionViewCell.swift in Sources */,
 				928135FC290B4BE500700AA6 /* LoginResponse.swift in Sources */,
 				92F80EEC290571F100938A01 /* APIKey.swift in Sources */,
-				92B7B6A129123A7B00E0336C /* SignupView.swift in Sources */,
+				92B7B6A129123A7B00E0336C /* SignupViewController.swift in Sources */,
 				92F80EDF29056E0E00938A01 /* ListViewModel.swift in Sources */,
 				9265DD892907BECF005D56BE /* RxCocoaInitialViewController.swift in Sources */,
 				929DA5D629028A4200810B2A /* ListViewController.swift in Sources */,
 				9265DD872907B1F3005D56BE /* RxCocoaExampleViewController.swift in Sources */,
 				9265DD962907CCAE005D56BE /* SearchPhotoAPIManager.swift in Sources */,
+				92B7B6B7291248A000E0336C /* SigninViewController.swift in Sources */,
 				929DA5D229028A4200810B2A /* AppDelegate.swift in Sources */,
 				9265DD852907AA57005D56BE /* SimpleTableViewController.swift in Sources */,
 				92F808F8290FC826006956A2 /* Product.swift in Sources */,
 				92B7B6A329123A8500E0336C /* SignupViewModel.swift in Sources */,
 				929DA5D429028A4200810B2A /* SceneDelegate.swift in Sources */,
+				92B7B6B0291240A200E0336C /* AuthAPI.swift in Sources */,
 				92F80EE82905719E00938A01 /* ListAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,3 +22,11 @@ extension URLConstant {
     static let shopURL = "/shop.json"
     static let blogURL = "/blog.json"
 }
+
+extension URLConstant {
+    static let authBaseURL = "http://api.memolease.com/api/v1"
+    
+    static let signup = "/signup"
+    static let signin = "/login"
+    static let profile = "/me"
+}
