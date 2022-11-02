@@ -39,6 +39,7 @@
 		92B7B6BF291256F900E0336C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6BE291256F900E0336C /* ProfileViewController.swift */; };
 		92B7B6C129125A9200E0336C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6C029125A9200E0336C /* ProfileViewModel.swift */; };
 		92B7B6C429125AE900E0336C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6C329125AE900E0336C /* Profile.swift */; };
+		92B7B6D829128BEA00E0336C /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6D729128BEA00E0336C /* AuthRouter.swift */; };
 		92DE76D8290FF724004474C6 /* NaverSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */; };
 		92F808EE290FC663006956A2 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808ED290FC663006956A2 /* ShopViewController.swift */; };
 		92F808F0290FC66D006956A2 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F808EF290FC66D006956A2 /* ShopViewModel.swift */; };
@@ -95,6 +96,7 @@
 		92B7B6BE291256F900E0336C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		92B7B6C029125A9200E0336C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		92B7B6C329125AE900E0336C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		92B7B6D729128BEA00E0336C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		92DE76D7290FF724004474C6 /* NaverSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverSearchRouter.swift; sourceTree = "<group>"; };
 		92F808ED290FC663006956A2 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		92F808EF290FC66D006956A2 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				92B7B6AF291240A200E0336C /* AuthAPI.swift */,
+				92B7B6D729128BEA00E0336C /* AuthRouter.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				92B7B6A129123A7B00E0336C /* SignupViewController.swift in Sources */,
 				92F80EDF29056E0E00938A01 /* ListViewModel.swift in Sources */,
 				9265DD892907BECF005D56BE /* RxCocoaInitialViewController.swift in Sources */,
+				92B7B6D829128BEA00E0336C /* AuthRouter.swift in Sources */,
 				929DA5D629028A4200810B2A /* ListViewController.swift in Sources */,
 				92B7B6C429125AE900E0336C /* Profile.swift in Sources */,
 				9265DD872907B1F3005D56BE /* RxCocoaExampleViewController.swift in Sources */,

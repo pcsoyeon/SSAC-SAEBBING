@@ -52,5 +52,28 @@ final class SigninViewModel {
                     print("Error - \(statusCode)")
                 }
             }
+        
+//        AF.request(AuthRouter.login(email: "12@test.com", password: "09876543"))
+//            .validate(statusCode: 200...299)
+//            .responseDecodable(of: Signin.self) { [weak self] response in
+//                guard let self = self else { return }
+//                
+//                guard let statusCode = response.response?.statusCode else { return }
+//                guard let value = response.value else { return }
+//                
+//                switch response.result {
+//                case .success:
+//                    
+//                    switch statusCode {
+//                    case 200..<300:
+//                        print(value.token)
+//                    default:
+//                        print("error")
+//                    }
+//                    
+//                case .failure(_):
+//                    print("Error - \(statusCode)")
+//                }
+//            }
     }
 }
