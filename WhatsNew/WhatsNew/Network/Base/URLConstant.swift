@@ -24,7 +24,7 @@ extension URLConstant {
 }
 
 extension URLConstant {
-    static let authBaseURL = "http://api.memolease.com/api/v1"
+    static let authBaseURL = "http://api.memolease.com/api/v1/users"
     
     static let signup = "/signup"
     static let signin = "/login"
