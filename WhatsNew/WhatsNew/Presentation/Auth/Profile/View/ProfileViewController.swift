@@ -72,7 +72,23 @@ extension ProfileViewController: BaseViewControllerAttribute {
     }
     
     func bind() {
-        viewModel.requestProfile()
+//        viewModel.requestProfile()
+        viewModel.request()
+            .subscribe { result in
+                switch result {
+                case .success(let data):
+                    print(data)
+                case .error(let error):
+                    print(error)
+                }
+                
+            } onFailure: { error in
+                print(error.localizedDescription)
+            } onDisposed: {
+                print("끝")
+            }
+            .disposed(by: disposeBag)
+
         
         viewModel.name
             .asDriver()
@@ -100,6 +116,9 @@ extension ProfileViewController: BaseViewControllerAttribute {
                         }
                     }
                 }
+                
+                
+                
             }
             .disposed(by: disposeBag)
     }
