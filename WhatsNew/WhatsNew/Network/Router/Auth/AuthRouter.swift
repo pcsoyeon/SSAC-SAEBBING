@@ -10,39 +10,60 @@ import Foundation
 import Alamofire
 
 enum AuthRouter: URLRequestConvertible {
-    case login(email: String, password: String)
+    case signup(userName: String, email: String, password: String)
+    case signin(email: String, password: String)
+    case profile
 }
 
 extension AuthRouter {
     var baseURL: URL {
-        return URL(string: "http://api.memolease.com/api/v1/users")!
+        return URL(string: URLConstant.authBaseURL)!
     }
     
     var path: String {
         switch self {
-        case .login:
+        case .signup:
+            return "/signup"
+        case .signin:
             return "/login"
+        case .profile:
+            return "/me"
         }
     }
     
     var headers: [String : String] {
-        return ["Content-Type" : "application/x-www-form-urlencoded"]
+        switch self {
+        case .signup, .signin:
+            return ["Content-Type" : "application/x-www-form-urlencoded"]
+        case .profile:
+            return ["Authorization" : "Bearer \(APIKey.token)"]
+        }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .login:
+        case .signup, .signin:
             return .post
+        case .profile:
+            return .get
         }
     }
     
     var parameters: [String: String] {
         switch self {
-        case .login(let email, let password):
+        case .signup(let userName, let email, let password):
+            return [
+                "userName" : userName,
+                "email" : email,
+                "password" : password
+            ]
+        case .signin(let email, let password):
             return [
                 "email" : email,
                 "password" : password
             ]
+        case .profile:
+            return ["":""]
         }
     }
     
@@ -56,8 +77,10 @@ extension AuthRouter {
         request.headers = HTTPHeaders(headers)
         
         switch self {
-        case .login:
+        case .signin, .signup:
             request = try URLEncodedFormParameterEncoder().encode(parameters, into: request)
+        case .profile:
+            request = try URLEncoding.default.encode(request, with: parameters)
         }
         
         return request

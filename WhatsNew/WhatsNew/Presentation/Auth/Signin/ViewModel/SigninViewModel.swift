@@ -53,7 +53,31 @@ final class SigninViewModel {
     func requestSignin() {
         let api = AuthAPI.login(email: email.value, password: password.value)
         
-        AF.request(api.url, method: .post, parameters: api.parameters, headers: api.headers)
+//        AF.request(api.url, method: .post, parameters: api.parameters, headers: api.headers)
+//            .validate(statusCode: 200...299)
+//            .responseDecodable(of: Signin.self) { [weak self] response in
+//                guard let self = self else { return }
+//
+//                guard let statusCode = response.response?.statusCode else { return }
+//                guard let value = response.value else { return }
+//
+//                switch response.result {
+//                case .success:
+//
+//                    switch statusCode {
+//                    case 200..<300:
+//                        UserDefaults.standard.set(value.token, forKey: "token")
+//                        self.isSucceed.accept(true)
+//                    default:
+//                        self.isSucceed.accept(false)
+//                    }
+//
+//                case .failure(_):
+//                    print("Error - \(statusCode)")
+//                }
+//            }
+        
+        AF.request(AuthRouter.signin(email: "12@test.com", password: "09876543"))
             .validate(statusCode: 200...299)
             .responseDecodable(of: Signin.self) { [weak self] response in
                 guard let self = self else { return }
@@ -76,28 +100,5 @@ final class SigninViewModel {
                     print("Error - \(statusCode)")
                 }
             }
-        
-//        AF.request(AuthRouter.login(email: "12@test.com", password: "09876543"))
-//            .validate(statusCode: 200...299)
-//            .responseDecodable(of: Signin.self) { [weak self] response in
-//                guard let self = self else { return }
-//                
-//                guard let statusCode = response.response?.statusCode else { return }
-//                guard let value = response.value else { return }
-//                
-//                switch response.result {
-//                case .success:
-//                    
-//                    switch statusCode {
-//                    case 200..<300:
-//                        print(value.token)
-//                    default:
-//                        print("error")
-//                    }
-//                    
-//                case .failure(_):
-//                    print("Error - \(statusCode)")
-//                }
-//            }
     }
 }

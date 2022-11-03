@@ -33,31 +33,56 @@ final class SignupViewModel {
     // MARK: - Request Method
     
     func requestSignin() {
-        let api = AuthAPI.signup(userName: userName.value,
-                                 email: email.value,
-                                 password: password.value)
+//        let api = AuthAPI.signup(userName: userName.value,
+//                                 email: email.value,
+//                                 password: password.value)
         
-        AF.request(api.url, method: .post, parameters: api.parameters, headers: api.headers).responseString { [weak self] response in
-            guard let self = self else { return }
-            
-            switch response.result {
-            case .success:
-                guard let statusCode = response.response?.statusCode else { return }
+//        AF.request(api.url, method: .post, parameters: api.parameters, headers: api.headers)
+//            .responseString { [weak self] response in
+//            guard let self = self else { return }
+//            r
+//            switch response.result {
+//            case .success:
+//                guard let statusCode = response.response?.statusCode else { return }
+//
+//                switch statusCode {
+//                case 200..<300:
+//                    self.isSucceed.onNext(true)
+//                case 400..<500:
+//                    self.isSucceed.onError(NetworkError.badRequest)
+//                case 500..<600:
+//                    self.isSucceed.onError(NetworkError.serverError)
+//                default:
+//                    self.isSucceed.onError(NetworkError.networkFail)
+//                }
+//
+//            case .failure:
+//                print("error")
+//            }
+//        }
+        
+        AF.request(AuthRouter.signup(userName: userName.value, email: email.value, password: password.value))
+            .responseString { [weak self] response in
+                guard let self = self else { return }
                 
-                switch statusCode {
-                case 200..<300:
-                    self.isSucceed.onNext(true)
-                case 400..<500:
-                    self.isSucceed.onError(NetworkError.badRequest)
-                case 500..<600:
-                    self.isSucceed.onError(NetworkError.serverError)
-                default:
-                    self.isSucceed.onError(NetworkError.networkFail)
+                switch response.result {
+                case .success:
+                    guard let statusCode = response.response?.statusCode else { return }
+                    
+                    switch statusCode {
+                    case 200..<300:
+                        self.isSucceed.onNext(true)
+                    case 400..<500:
+                        self.isSucceed.onError(NetworkError.badRequest)
+                    case 500..<600:
+                        self.isSucceed.onError(NetworkError.serverError)
+                    default:
+                        self.isSucceed.onError(NetworkError.networkFail)
+                    }
+                    
+                case .failure:
+                    print("error")
                 }
-                
-            case .failure:
-                print("error")
             }
-        }
     }
 }

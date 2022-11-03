@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // 첫화면 분기처리
         if UserDefaults.standard.string(forKey: "token") != "" {
-            window?.rootViewController = UINavigationController(rootViewController: SigninViewController())
+            window?.rootViewController = UINavigationController(rootViewController: ProfileViewController())
         } else {
             window?.rootViewController = UINavigationController(rootViewController: SignupViewController())
         }
