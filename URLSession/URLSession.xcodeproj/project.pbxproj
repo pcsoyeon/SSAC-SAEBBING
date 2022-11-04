@@ -109,6 +109,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		920D3576291515FA00EF29C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6CF29127E3A00E0336C /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		920D35772915160800EF29C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6D129127E4400E0336C /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		920D35782915161200EF29C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92B7B6CC29127E1D00E0336C /* Login.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		92B7B6302911D11E00E0336C = {
 			isa = PBXGroup;
 			children = (
@@ -245,9 +269,9 @@
 		92B7B6CE29127E2200E0336C /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				92B7B6CC29127E1D00E0336C /* Login.swift */,
-				92B7B6CF29127E3A00E0336C /* LoginViewModel.swift */,
-				92B7B6D129127E4400E0336C /* LoginViewController.swift */,
+				920D35782915161200EF29C4 /* Model */,
+				920D35772915160800EF29C4 /* View */,
+				920D3576291515FA00EF29C4 /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
