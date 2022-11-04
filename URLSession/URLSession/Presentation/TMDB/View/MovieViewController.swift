@@ -7,8 +7,27 @@
 
 import UIKit
 
-class MovieViewController: UIViewController {
+import RxCocoa
+import RxSwift
 
+final class MovieViewController: UIViewController {
+    
+    // MARK: - UI Property
+    
+    private let searchBar: UISearchBar = {
+        let searhBar = UISearchBar()
+        searhBar.searchTextField.borderStyle = .none
+        return searhBar
+    }()
+    
+    private let tableView = UITableView(frame: .zero)
+
+    // MARK: - Property
+    
+    private let disposeBag = DisposeBag()
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -12,6 +12,5 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LoginAPI.shared.requestLogin(email: "12@test.com", password: "09876543")
     }
 }
