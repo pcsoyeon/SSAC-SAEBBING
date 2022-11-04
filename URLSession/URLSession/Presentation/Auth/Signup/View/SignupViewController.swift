@@ -15,16 +15,17 @@ final class SignupViewController: UIViewController {
     
     // MARK: - UI Property
     
-    private let userNameTextField = UITextField()
-    private let emailTextField = UITextField()
-    private let passwordTextField = UITextField()
+    private var userNameTextField = UITextField()
+    private var emailTextField = UITextField()
+    private var passwordTextField = UITextField()
     
-    private let signupButton = UIButton()
+    private var signupButton = UIButton()
     
     // MARK: - Property
     
+    private let viewModel = SignupViewModel()
     private let disposeBag = DisposeBag()
-
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -66,6 +67,8 @@ extension SignupViewController: BaseViewControllerAttribute {
     }
     
     func setAttribute() {
+        view.backgroundColor = .white
+        
         [userNameTextField, emailTextField, passwordTextField].forEach {
             $0.borderStyle = .roundedRect
         }
@@ -73,9 +76,31 @@ extension SignupViewController: BaseViewControllerAttribute {
         userNameTextField.placeholder = "닉네임을 입력해주세요."
         emailTextField.placeholder = "이메일을 입력해주세요."
         passwordTextField.placeholder = "비밀번호를 입력해주세요."
+        
+        signupButton.setTitle("회원가입", for: .normal)
     }
     
     func bind() {
+        let input = SignupViewModel.Input(nameText: userNameTextField.rx.text,
+                                          emailText: emailTextField.rx.text,
+                                          passwordText: passwordTextField.rx.text,
+                                          tap: signupButton.rx.tap)
+        let output = viewModel.transform(from: input)
         
+        output.validation
+            .withUnretained(self)
+            .bind { (vc, bool) in
+                let color: UIColor = bool ? .systemPink : .lightGray
+                vc.signupButton.backgroundColor = color
+                vc.signupButton.isEnabled = bool
+            }
+            .disposed(by: disposeBag)
+        
+        output.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                print("화면 전환")
+            }
+            .disposed(by: disposeBag)
     }
 }
