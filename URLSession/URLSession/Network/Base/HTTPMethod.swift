@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum HTTPMethod {
+    static let post = "POST"
+    static let get = "GET"
+    static let delete = "DELETE"
+    static let patch = "PATCH"
+}

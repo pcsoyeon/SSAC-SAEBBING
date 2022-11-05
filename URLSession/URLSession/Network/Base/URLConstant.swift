@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+enum URLConstant {
+    static let baseURL = "http://api.memolease.com/api/v1/users"
+}

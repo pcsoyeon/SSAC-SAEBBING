@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum Endpoint {
+    static let signup = "/signup"
+    static let login = "/login"
+    static let profile = "/profile"
+}
