@@ -66,6 +66,19 @@ final class LoginViewModel {
     }
     
     func requestLogin() {
-        
+        AuthAPI.shared.requestLogin(email: email.value, password: password.value) { [weak self] response in
+            guard let self = self else { return }
+            
+            switch response {
+            case .success(let data):
+                // 12@test.com
+                // 09876543
+                print("Token: \(data.token)")
+                self.isLoginSucceed.onNext(true)
+                
+            case .failure(let error):
+                self.isLoginSucceed.onError(error)
+            }
+        }
     }
 }

@@ -75,13 +75,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		920D35672914DC3700EF29C4 /* TMDB */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TMDB;
-			sourceTree = "<group>";
-		};
 		920D35682914EE4900EF29C4 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,7 +202,6 @@
 		92B7B6522911D72F00E0336C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				920D35672914DC3700EF29C4 /* TMDB */,
 				92B7B6D329127E5900E0336C /* Auth */,
 				920D357C2915187500EF29C4 /* Base */,
 			);

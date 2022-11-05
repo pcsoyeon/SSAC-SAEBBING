@@ -28,31 +28,32 @@ final class SignupViewModel: BaseViewModel {
         let nameText: ControlProperty<String?>
         let emailText: ControlProperty<String?>
         let passwordText: ControlProperty<String?>
-        let tap: ControlEvent<Void>
+        
+        let signupTap: ControlEvent<Void>
+        let loginTap: ControlEvent<Void>
     }
     
     struct Output {
         let validation: Observable<Bool>
-        let tap: ControlEvent<Void>
+        
+        let signupTap: ControlEvent<Void>
+        let loginTap: ControlEvent<Void>
+        
         let isSignupSucceed: PublishSubject<Bool>
     }
     
     func transform(from input: Input) -> Output {
         let nameValid = input.nameText.orEmpty
             .map { $0.count > 0 && $0.count <= 12 && !$0.isEmpty }
-            .share()
         
         let emailValid = input.emailText.orEmpty
             .map { $0.count > 0 && $0.contains("@") && $0.contains(".") }
-            .share()
         
         let passwordValid = input.passwordText.orEmpty
             .map { $0.count >= 8 }
-            .share()
         
         let totalValid = Observable.combineLatest(nameValid, emailValid, passwordValid)
             .map { $0 && $1 && $2 }
-            .share()
         
         input.nameText
             .orEmpty
@@ -76,7 +77,7 @@ final class SignupViewModel: BaseViewModel {
             }
             .disposed(by: disposeBag)
         
-        return Output(validation: totalValid, tap: input.tap, isSignupSucceed: isSignupSucceed)
+        return Output(validation: totalValid, signupTap: input.signupTap, loginTap: input.loginTap, isSignupSucceed: isSignupSucceed)
     }
     
     func requestSignup() {

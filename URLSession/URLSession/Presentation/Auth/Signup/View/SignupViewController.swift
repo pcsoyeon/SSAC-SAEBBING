@@ -21,6 +21,8 @@ final class SignupViewController: UIViewController {
     
     private var signupButton = UIButton()
     
+    private var loginButton = UIButton()
+    
     // MARK: - Property
     
     private let viewModel = SignupViewModel()
@@ -38,7 +40,7 @@ final class SignupViewController: UIViewController {
 
 extension SignupViewController: BaseViewControllerAttribute {
     func configureHierarchy() {
-        [userNameTextField, emailTextField, passwordTextField, signupButton].forEach {
+        [userNameTextField, emailTextField, passwordTextField, signupButton, loginButton].forEach {
             view.addSubview($0)
         }
         
@@ -64,6 +66,11 @@ extension SignupViewController: BaseViewControllerAttribute {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
             make.height.equalTo(50)
         }
+        
+        loginButton.snp.makeConstraints { make in
+            make.top.equalTo(signupButton.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
+        }
     }
     
     func setAttribute() {
@@ -78,13 +85,17 @@ extension SignupViewController: BaseViewControllerAttribute {
         passwordTextField.placeholder = "비밀번호를 입력해주세요."
         
         signupButton.setTitle("회원가입", for: .normal)
+        
+        loginButton.setTitle("로그인 화면으로 이동", for: .normal)
+        loginButton.setTitleColor(.darkGray, for: .normal)
     }
     
     func bind() {
         let input = SignupViewModel.Input(nameText: userNameTextField.rx.text,
                                           emailText: emailTextField.rx.text,
                                           passwordText: passwordTextField.rx.text,
-                                          tap: signupButton.rx.tap)
+                                          signupTap: signupButton.rx.tap,
+                                          loginTap: loginButton.rx.tap)
         let output = viewModel.transform(from: input)
         
         output.validation
@@ -96,10 +107,17 @@ extension SignupViewController: BaseViewControllerAttribute {
             }
             .disposed(by: disposeBag)
         
-        output.tap
+        output.signupTap
             .withUnretained(self)
             .bind { (vc, _) in
                 vc.viewModel.requestSignup()
+            }
+            .disposed(by: disposeBag)
+        
+        output.loginTap
+            .withUnretained(self)
+            .bind { vc, _ in
+                vc.navigationController?.pushViewController(LoginViewController(), animated: true)
             }
             .disposed(by: disposeBag)
         
@@ -110,7 +128,6 @@ extension SignupViewController: BaseViewControllerAttribute {
                     DispatchQueue.main.async {
                         vc.navigationController?.pushViewController(LoginViewController(), animated: true)
                     }
-                    
                 }
             } onError: { error in
                 print(error)

@@ -37,8 +37,9 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: BaseViewControllerAttribute {
     func configureHierarchy() {
-        view.addSubview(emailTextField)
-        view.addSubview(passwordTextField)
+        [emailTextField, passwordTextField, loginButton].forEach {
+            view.addSubview($0)
+        }
         
         emailTextField.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
@@ -47,6 +48,12 @@ extension LoginViewController: BaseViewControllerAttribute {
         
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(8)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
+            make.height.equalTo(50)
+        }
+        
+        loginButton.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom).offset(8)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
             make.height.equalTo(50)
         }
@@ -67,7 +74,7 @@ extension LoginViewController: BaseViewControllerAttribute {
         let input = LoginViewModel.Input(emailText: emailTextField.rx.text,
                                          passwordText: passwordTextField.rx.text,
                                          loginTap: loginButton.rx.tap)
-        var output = viewModel.transform(from: input)
+        let output = viewModel.transform(from: input)
 
         output.loginTap
             .drive(onNext: { [weak self] in
@@ -89,6 +96,5 @@ extension LoginViewController: BaseViewControllerAttribute {
                 print(error)
             }
             .disposed(by: disposeBag)
-
     }
 }
