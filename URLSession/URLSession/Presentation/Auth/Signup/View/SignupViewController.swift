@@ -99,8 +99,23 @@ extension SignupViewController: BaseViewControllerAttribute {
         output.tap
             .withUnretained(self)
             .bind { (vc, _) in
-                print("화면 전환")
+                vc.viewModel.requestSignup()
             }
             .disposed(by: disposeBag)
+        
+        output.isSignupSucceed
+            .withUnretained(self)
+            .subscribe { vc, value in
+                if value {
+                    DispatchQueue.main.async {
+                        vc.navigationController?.pushViewController(LoginViewController(), animated: true)
+                    }
+                    
+                }
+            } onError: { error in
+                print(error)
+            }
+            .disposed(by: disposeBag)
+
     }
 }
