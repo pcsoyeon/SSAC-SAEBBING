@@ -85,6 +85,7 @@ final class AuthAPI {
             
             do {
                 let result = try JSONDecoder().decode(Login.self, from: data)
+                UserDefaults.standard.set(result.token, forKey: Constant.UserDefaults.token)
                 completion(.success(result))
             } catch {
                 completion(.failure(.invalidData))

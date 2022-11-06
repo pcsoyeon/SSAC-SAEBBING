@@ -12,7 +12,7 @@ import RxSwift
 
 final class ProfileService {
     let baseURL = URLConstant.baseURL
-    var accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNjIxYzJiNDIyNDI1MmZkNzlhNTNkMiIsImlhdCI6MTY2NzY1NDc0NywiZXhwIjoxNjY3NzQxMTQ3fQ.A2juKBVXeROgc_7oxlGEvapEjysRCYr1ypsn6j-env0"
+    var accessToken = UserDefaults.standard.string(forKey: Constant.UserDefaults.token)!
     
     func requestProfile() throws -> Observable<Profile> {
         let url = URL(string: baseURL + Endpoint.profile)!
