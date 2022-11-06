@@ -19,6 +19,8 @@
 		920D35882915ED7900EF29C4 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D35872915ED7900EF29C4 /* AuthRouter.swift */; };
 		920D358A2915EE7100EF29C4 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D35892915EE7000EF29C4 /* RequestProtocol.swift */; };
 		920D358C2915EEEC00EF29C4 /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D358B2915EEEC00EF29C4 /* AuthAPI.swift */; };
+		920D35A22916A56200EF29C4 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D35A12916A56200EF29C4 /* ProfileService.swift */; };
+		920D35A42916A60700EF29C4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920D35A32916A60700EF29C4 /* Profile.swift */; };
 		92B7B63D2911D11E00E0336C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B63C2911D11E00E0336C /* AppDelegate.swift */; };
 		92B7B63F2911D11E00E0336C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B63E2911D11E00E0336C /* SceneDelegate.swift */; };
 		92B7B6412911D11E00E0336C /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B7B6402911D11E00E0336C /* MovieViewController.swift */; };
@@ -46,6 +48,8 @@
 		920D35872915ED7900EF29C4 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		920D35892915EE7000EF29C4 /* RequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		920D358B2915EEEC00EF29C4 /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		920D35A12916A56200EF29C4 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		920D35A32916A60700EF29C4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		92B7B6392911D11E00E0336C /* URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B7B63C2911D11E00E0336C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92B7B63E2911D11E00E0336C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				920D35832915E8EC00EF29C4 /* ProfileViewController.swift */,
+				920D35A32916A60700EF29C4 /* Profile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -153,6 +158,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		920D35A02916A55500EF29C4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				920D35A12916A56200EF29C4 /* ProfileService.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		92B7B6302911D11E00E0336C = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +215,7 @@
 		92B7B6522911D72F00E0336C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				920D35A02916A55500EF29C4 /* Profile */,
 				92B7B6D329127E5900E0336C /* Auth */,
 				920D357C2915187500EF29C4 /* Base */,
 			);
@@ -389,6 +403,7 @@
 				92B7B6412911D11E00E0336C /* MovieViewController.swift in Sources */,
 				92B7B65E2911D8AF00E0336C /* BaseViewModelAttribute.swift in Sources */,
 				920D358C2915EEEC00EF29C4 /* AuthAPI.swift in Sources */,
+				920D35A42916A60700EF29C4 /* Profile.swift in Sources */,
 				920D35842915E8EC00EF29C4 /* ProfileViewController.swift in Sources */,
 				92B7B6592911D86000E0336C /* BaseViewControllerAttribute.swift in Sources */,
 				920D35862915EC4A00EF29C4 /* APIError.swift in Sources */,
@@ -404,6 +419,7 @@
 				920D358A2915EE7100EF29C4 /* RequestProtocol.swift in Sources */,
 				920D35882915ED7900EF29C4 /* AuthRouter.swift in Sources */,
 				92B7B6652911D9A700E0336C /* MovieViewModel.swift in Sources */,
+				920D35A22916A56200EF29C4 /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
