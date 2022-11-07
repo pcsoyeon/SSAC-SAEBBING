@@ -9,4 +9,6 @@ import Foundation
 
 enum URLConstant {
     static let baseURL = "http://api.memolease.com/api/v1/users"
+    
+    static let tmdbBaseURL = "https://api.themoviedb.org/3"
 }

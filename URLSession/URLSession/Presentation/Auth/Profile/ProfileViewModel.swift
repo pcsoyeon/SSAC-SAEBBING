@@ -10,7 +10,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-final class ProfileViewModel: BaseViewModel {
+final class ProfileViewModel: BaseViewModelAttribute {
     
     struct Input {
         let logoutTap: ControlEvent<Void>

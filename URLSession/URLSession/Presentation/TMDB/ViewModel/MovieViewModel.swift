@@ -11,6 +11,6 @@ import RxCocoa
 import RxSwift
 
 final class MovieViewModel {
-    
+    var list = PublishRelay<[Movie]>()
 }
 

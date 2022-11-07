@@ -12,3 +12,11 @@ enum Endpoint {
     static let login = "/login"
     static let profile = "/me"
 }
+
+extension Endpoint {
+    struct TMDB {
+        static let movie = "/movie"
+        
+        static let popular = "/popular"
+    }
+}

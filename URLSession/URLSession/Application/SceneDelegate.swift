@@ -19,11 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        if UserDefaults.standard.string(forKey: Constant.UserDefaults.token) != nil {
-            window?.rootViewController = ProfileViewController()
-        } else {
-            window?.rootViewController = UINavigationController(rootViewController: SignupViewController())
-        }
+//        if UserDefaults.standard.string(forKey: Constant.UserDefaults.token) != nil {
+//            window?.rootViewController = ProfileViewController()
+//        } else {
+//            window?.rootViewController = UINavigationController(rootViewController: SignupViewController())
+//        }
+        window?.rootViewController = MovieViewController()
         
         window?.makeKeyAndVisible()
     }
