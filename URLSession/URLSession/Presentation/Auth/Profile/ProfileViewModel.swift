@@ -10,13 +10,19 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-final class ProfileViewModel {
+final class ProfileViewModel: BaseViewModel {
     
     struct Input {
-        
+        let logoutTap: ControlEvent<Void>
     }
     
     struct Output {
+        let logoutTap: ControlEvent<Void>
+    }
+    
+    func transform(from input: Input) -> Output {
+        let logoutTap = input.logoutTap
         
+        return Output(logoutTap: logoutTap)
     }
 }

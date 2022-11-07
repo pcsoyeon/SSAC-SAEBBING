@@ -24,6 +24,9 @@ final class ProfileViewController: UIViewController {
     // MARK: - Property
     
     private let profileService = ProfileService()
+    
+    private let viewModel = ProfileViewModel()
+    
     private let disposeBag = DisposeBag()
     
     // MARK: - Life Cycle
@@ -78,7 +81,11 @@ extension ProfileViewController: BaseViewControllerAttribute {
     }
     
     func bind() {
-        logoutButton.rx.tap
+        let input = ProfileViewModel.Input(logoutTap: logoutButton.rx.tap)
+        
+        let output = viewModel.transform(from: input)
+        
+        output.logoutTap
             .withUnretained(self)
             .flatMapLatest { (vc, _) in
                 return vc.presentSignup()
