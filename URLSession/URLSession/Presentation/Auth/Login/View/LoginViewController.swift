@@ -89,12 +89,22 @@ extension LoginViewController: BaseViewControllerAttribute {
             .subscribe { vc, value in
                 DispatchQueue.main.async {
                     if value {
-                        vc.navigationController?.pushViewController(ProfileViewController(), animated: true)
+                        vc.presentProfile()
                     }
                 }
             } onError: { error in
                 print(error)
             }
             .disposed(by: disposeBag)
+    }
+}
+
+extension LoginViewController {
+    private func presentProfile() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        sceneDelegate?.window?.rootViewController = ProfileViewController()
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
 }

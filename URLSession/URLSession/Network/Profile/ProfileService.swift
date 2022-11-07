@@ -25,7 +25,7 @@ final class ProfileService {
         return URLSession.shared.rx.response(request: request)
             .map { [weak self] _, data in
                 guard let result = Profile.parse(data: data) else {
-                    print("parsing error")
+                    print("Parsing Error")
                     return Profile(user: User(photo: "", email: "", username: ""))
                 }
                 

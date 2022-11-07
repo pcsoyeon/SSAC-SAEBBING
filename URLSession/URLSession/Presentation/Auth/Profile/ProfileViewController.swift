@@ -14,8 +14,12 @@ final class ProfileViewController: UIViewController {
 
     // MARK: - UI Property
     
+    private var imageView = UIImageView()
+    
     private var nameLabel = UILabel()
     private var emailLabel = UILabel()
+    
+    private var logoutButton = UIButton()
     
     // MARK: - Property
     
@@ -40,12 +44,18 @@ final class ProfileViewController: UIViewController {
 
 extension ProfileViewController: BaseViewControllerAttribute {
     func configureHierarchy() {
-        [nameLabel, emailLabel].forEach {
+        [imageView, nameLabel, emailLabel, logoutButton].forEach {
             view.addSubview($0)
         }
         
+        imageView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(20)
+            make.width.height.equalTo(50)
+            make.centerX.equalToSuperview()
+        }
+        
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(50)
+            make.top.equalTo(imageView.snp.bottom).offset(8)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
         
@@ -53,19 +63,56 @@ extension ProfileViewController: BaseViewControllerAttribute {
             make.top.equalTo(nameLabel.snp.bottom).offset(5)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
+        
+        logoutButton.snp.makeConstraints { make in
+            make.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
+        }
     }
     
     func setAttribute() {
         view.backgroundColor = .white
+        
+        logoutButton.setTitle("로그아웃", for: .normal)
+        logoutButton.setTitleColor(.lightGray, for: .normal)
+        logoutButton.setTitleColor(.darkGray, for: .highlighted)
     }
     
     func bind() {
-        
+        logoutButton.rx.tap
+            .withUnretained(self)
+            .flatMapLatest { (vc, _) in
+                return vc.presentSignup()
+            }
+            .subscribe(onCompleted: {
+                print("회원가입 화면으로 이동")
+            })
+            .disposed(by: disposeBag)
     }
 }
 
+// MARK: - Transition
+
 extension ProfileViewController {
-    func fetchProfile() throws {
+    private func presentSignup() -> Completable {
+        return Completable.create { completable in
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            let sceneDelegate = windowScene?.delegate as? SceneDelegate
+            
+            sceneDelegate?.window?.rootViewController = UINavigationController(rootViewController: SignupViewController())
+            sceneDelegate?.window?.makeKeyAndVisible()
+            
+            UserDefaults.standard.removeObject(forKey: Constant.UserDefaults.token)
+            
+            completable(.completed)
+            return Disposables.create()
+        }
+    }
+}
+
+// MARK: - Network
+
+extension ProfileViewController {
+    private func fetchProfile() throws {
         try profileService.requestProfile()
             .asDriver(onErrorJustReturn: Profile(user: User(photo: "", email: "", username: "")))
             .drive { [weak self] profile in
