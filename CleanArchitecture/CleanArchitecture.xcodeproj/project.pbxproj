@@ -13,6 +13,11 @@
 		9200823A29C5E32E00083A90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9200823829C5E32E00083A90 /* Main.storyboard */; };
 		9200823C29C5E33100083A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9200823B29C5E33100083A90 /* Assets.xcassets */; };
 		9200823F29C5E33100083A90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9200823D29C5E33100083A90 /* LaunchScreen.storyboard */; };
+		9200824E29C5F60100083A90 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9200824D29C5F60100083A90 /* RxCocoa */; };
+		9200825029C5F60100083A90 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9200824F29C5F60100083A90 /* RxSwift */; };
+		9200825329C5F60D00083A90 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9200825229C5F60D00083A90 /* Alamofire */; };
+		9200825629C5F61B00083A90 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9200825529C5F61B00083A90 /* SnapKit */; };
+		9200825929C5F62800083A90 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 9200825829C5F62800083A90 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9200825929C5F62800083A90 /* Then in Frameworks */,
+				9200825329C5F60D00083A90 /* Alamofire in Frameworks */,
+				9200825629C5F61B00083A90 /* SnapKit in Frameworks */,
+				9200825029C5F60100083A90 /* RxSwift in Frameworks */,
+				9200824E29C5F60100083A90 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +66,63 @@
 		9200823129C5E32E00083A90 /* CleanArchitecture */ = {
 			isa = PBXGroup;
 			children = (
-				9200823229C5E32E00083A90 /* AppDelegate.swift */,
-				9200823429C5E32E00083A90 /* SceneDelegate.swift */,
-				9200823629C5E32E00083A90 /* ViewController.swift */,
-				9200823829C5E32E00083A90 /* Main.storyboard */,
-				9200823B29C5E33100083A90 /* Assets.xcassets */,
-				9200823D29C5E33100083A90 /* LaunchScreen.storyboard */,
+				9200824629C5EF1E00083A90 /* Application */,
+				9200824729C5EF3800083A90 /* Data */,
+				9200824829C5F00B00083A90 /* Domain */,
+				9200824929C5F01400083A90 /* Network */,
+				9200824A29C5F02100083A90 /* Presentation */,
+				9200824B29C5F11200083A90 /* Resource */,
 				9200824029C5E33100083A90 /* Info.plist */,
 			);
 			path = CleanArchitecture;
+			sourceTree = "<group>";
+		};
+		9200824629C5EF1E00083A90 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9200823229C5E32E00083A90 /* AppDelegate.swift */,
+				9200823429C5E32E00083A90 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9200824729C5EF3800083A90 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9200824829C5F00B00083A90 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		9200824929C5F01400083A90 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9200824A29C5F02100083A90 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				9200823629C5E32E00083A90 /* ViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		9200824B29C5F11200083A90 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9200823829C5E32E00083A90 /* Main.storyboard */,
+				9200823B29C5E33100083A90 /* Assets.xcassets */,
+				9200823D29C5E33100083A90 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +141,13 @@
 			dependencies = (
 			);
 			name = CleanArchitecture;
+			packageProductDependencies = (
+				9200824D29C5F60100083A90 /* RxCocoa */,
+				9200824F29C5F60100083A90 /* RxSwift */,
+				9200825229C5F60D00083A90 /* Alamofire */,
+				9200825529C5F61B00083A90 /* SnapKit */,
+				9200825829C5F62800083A90 /* Then */,
+			);
 			productName = CleanArchitecture;
 			productReference = 9200822F29C5E32E00083A90 /* CleanArchitecture.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +176,12 @@
 				Base,
 			);
 			mainGroup = 9200822629C5E32E00083A90;
+			packageReferences = (
+				9200824C29C5F60100083A90 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				9200825129C5F60D00083A90 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9200825429C5F61B00083A90 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9200825729C5F62800083A90 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 9200823029C5E32E00083A90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -364,6 +435,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9200824C29C5F60100083A90 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		9200825129C5F60D00083A90 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		9200825429C5F61B00083A90 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		9200825729C5F62800083A90 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9200824D29C5F60100083A90 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9200824C29C5F60100083A90 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		9200824F29C5F60100083A90 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9200824C29C5F60100083A90 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		9200825229C5F60D00083A90 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9200825129C5F60D00083A90 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		9200825529C5F61B00083A90 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9200825429C5F61B00083A90 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		9200825829C5F62800083A90 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9200825729C5F62800083A90 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9200822729C5E32E00083A90 /* Project object */;
 }
