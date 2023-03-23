@@ -18,6 +18,8 @@
 		9200825329C5F60D00083A90 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9200825229C5F60D00083A90 /* Alamofire */; };
 		9200825629C5F61B00083A90 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9200825529C5F61B00083A90 /* SnapKit */; };
 		9200825929C5F62800083A90 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 9200825829C5F62800083A90 /* Then */; };
+		9274D12C29C5FC7F004525FF /* WeatherEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D12B29C5FC7F004525FF /* WeatherEntity.swift */; };
+		9274D13029C5FD67004525FF /* FetchDailyWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D12F29C5FD67004525FF /* FetchDailyWeatherUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		9200823B29C5E33100083A90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9200823E29C5E33100083A90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9200824029C5E33100083A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9274D12B29C5FC7F004525FF /* WeatherEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEntity.swift; sourceTree = "<group>"; };
+		9274D12F29C5FD67004525FF /* FetchDailyWeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDailyWeatherUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 		9200824829C5F00B00083A90 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9274D12D29C5FD3A004525FF /* Entity */,
+				9274D12E29C5FD43004525FF /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -123,6 +129,22 @@
 				9200823D29C5E33100083A90 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		9274D12D29C5FD3A004525FF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9274D12B29C5FC7F004525FF /* WeatherEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		9274D12E29C5FD43004525FF /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				9274D12F29C5FD67004525FF /* FetchDailyWeatherUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +233,9 @@
 			files = (
 				9200823729C5E32E00083A90 /* ViewController.swift in Sources */,
 				9200823329C5E32E00083A90 /* AppDelegate.swift in Sources */,
+				9274D13029C5FD67004525FF /* FetchDailyWeatherUseCase.swift in Sources */,
 				9200823529C5E32E00083A90 /* SceneDelegate.swift in Sources */,
+				9274D12C29C5FC7F004525FF /* WeatherEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
