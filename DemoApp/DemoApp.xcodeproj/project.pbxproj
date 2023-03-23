@@ -17,6 +17,11 @@
 		9274D15E29CC8808004525FF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 9274D15D29CC8807004525FF /* Then */; };
 		9274D16129CC8816004525FF /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9274D16029CC8816004525FF /* RxCocoa */; };
 		9274D16329CC8816004525FF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9274D16229CC8816004525FF /* RxSwift */; };
+		9274D16529CC88AA004525FF /* CoureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D16429CC88AA004525FF /* CoureService.swift */; };
+		9274D16729CC88C1004525FF /* CourseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D16629CC88C1004525FF /* CourseRepository.swift */; };
+		9274D16A29CC8901004525FF /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 9274D16929CC8901004525FF /* Factory */; };
+		9274D16E29CC8A48004525FF /* CourseItem_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D16D29CC8A48004525FF /* CourseItem_API.swift */; };
+		9274D17029CC8A80004525FF /* ShareContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D16F29CC8A80004525FF /* ShareContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,10 @@
 		9274D14629CC874B004525FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9274D14929CC874B004525FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9274D14B29CC874B004525FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9274D16429CC88AA004525FF /* CoureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoureService.swift; sourceTree = "<group>"; };
+		9274D16629CC88C1004525FF /* CourseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepository.swift; sourceTree = "<group>"; };
+		9274D16D29CC8A48004525FF /* CourseItem_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem_API.swift; sourceTree = "<group>"; };
+		9274D16F29CC8A80004525FF /* ShareContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9274D16129CC8816004525FF /* RxCocoa in Frameworks */,
+				9274D16A29CC8901004525FF /* Factory in Frameworks */,
 				9274D15B29CC87FF004525FF /* SnapKit in Frameworks */,
 				9274D16329CC8816004525FF /* RxSwift in Frameworks */,
 				9274D15E29CC8808004525FF /* Then in Frameworks */,
@@ -77,6 +87,8 @@
 		9274D15129CC876D004525FF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				9274D16C29CC89C1004525FF /* Entity */,
+				9274D16B29CC89B7004525FF /* Container */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -84,6 +96,7 @@
 		9274D15229CC8773004525FF /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				9274D16629CC88C1004525FF /* CourseRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -91,6 +104,7 @@
 		9274D15329CC877E004525FF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9274D16429CC88AA004525FF /* CoureService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -139,6 +153,22 @@
 			path = Course;
 			sourceTree = "<group>";
 		};
+		9274D16B29CC89B7004525FF /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				9274D16F29CC8A80004525FF /* ShareContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		9274D16C29CC89C1004525FF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9274D16D29CC8A48004525FF /* CourseItem_API.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +190,7 @@
 				9274D15D29CC8807004525FF /* Then */,
 				9274D16029CC8816004525FF /* RxCocoa */,
 				9274D16229CC8816004525FF /* RxSwift */,
+				9274D16929CC8901004525FF /* Factory */,
 			);
 			productName = DemoApp;
 			productReference = 9274D13A29CC8749004525FF /* DemoApp.app */;
@@ -193,6 +224,7 @@
 				9274D15929CC87FF004525FF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				9274D15C29CC8807004525FF /* XCRemoteSwiftPackageReference "Then" */,
 				9274D15F29CC8816004525FF /* XCRemoteSwiftPackageReference "RxSwift" */,
+				9274D16829CC8901004525FF /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 9274D13B29CC8749004525FF /* Products */;
 			projectDirPath = "";
@@ -221,8 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9274D16E29CC8A48004525FF /* CourseItem_API.swift in Sources */,
+				9274D16529CC88AA004525FF /* CoureService.swift in Sources */,
 				9274D14229CC8749004525FF /* ViewController.swift in Sources */,
 				9274D13E29CC8749004525FF /* AppDelegate.swift in Sources */,
+				9274D16729CC88C1004525FF /* CourseRepository.swift in Sources */,
+				9274D17029CC8A80004525FF /* ShareContainer.swift in Sources */,
 				9274D14029CC8749004525FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +511,14 @@
 				kind = branch;
 			};
 		};
+		9274D16829CC8901004525FF /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -497,6 +541,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9274D15F29CC8816004525FF /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		9274D16929CC8901004525FF /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9274D16829CC8901004525FF /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
