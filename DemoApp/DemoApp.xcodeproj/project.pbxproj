@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9274D13E29CC8749004525FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D13D29CC8749004525FF /* AppDelegate.swift */; };
 		9274D14029CC8749004525FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D13F29CC8749004525FF /* SceneDelegate.swift */; };
-		9274D14229CC8749004525FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D14129CC8749004525FF /* ViewController.swift */; };
 		9274D14529CC8749004525FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9274D14329CC8749004525FF /* Main.storyboard */; };
 		9274D14729CC874B004525FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9274D14629CC874B004525FF /* Assets.xcassets */; };
 		9274D14A29CC874B004525FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9274D14829CC874B004525FF /* LaunchScreen.storyboard */; };
@@ -17,26 +16,17 @@
 		9274D15E29CC8808004525FF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 9274D15D29CC8807004525FF /* Then */; };
 		9274D16129CC8816004525FF /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9274D16029CC8816004525FF /* RxCocoa */; };
 		9274D16329CC8816004525FF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9274D16229CC8816004525FF /* RxSwift */; };
-		9274D16529CC88AA004525FF /* CoureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D16429CC88AA004525FF /* CoureService.swift */; };
-		9274D16729CC88C1004525FF /* CourseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D16629CC88C1004525FF /* CourseRepository.swift */; };
 		9274D16A29CC8901004525FF /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 9274D16929CC8901004525FF /* Factory */; };
-		9274D16E29CC8A48004525FF /* CourseItem_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D16D29CC8A48004525FF /* CourseItem_API.swift */; };
-		9274D17029CC8A80004525FF /* ShareContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9274D16F29CC8A80004525FF /* ShareContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9274D13A29CC8749004525FF /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9274D13D29CC8749004525FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9274D13F29CC8749004525FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9274D14129CC8749004525FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9274D14429CC8749004525FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9274D14629CC874B004525FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9274D14929CC874B004525FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9274D14B29CC874B004525FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9274D16429CC88AA004525FF /* CoureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoureService.swift; sourceTree = "<group>"; };
-		9274D16629CC88C1004525FF /* CourseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRepository.swift; sourceTree = "<group>"; };
-		9274D16D29CC8A48004525FF /* CourseItem_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem_API.swift; sourceTree = "<group>"; };
-		9274D16F29CC8A80004525FF /* ShareContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +64,9 @@
 		9274D13C29CC8749004525FF /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				9274D15129CC876D004525FF /* Domain */,
-				9274D15229CC8773004525FF /* Repository */,
-				9274D15329CC877E004525FF /* Service */,
+				92DA63AA29E05F9B00F2059C /* Domain */,
+				92DA63AB29E05FAE00F2059C /* Repository */,
+				92DA63AC29E05FB800F2059C /* Service */,
 				9274D15429CC8789004525FF /* Scene */,
 				9274D15529CC8799004525FF /* Support */,
 				9274D14B29CC874B004525FF /* Info.plist */,
@@ -84,35 +74,10 @@
 			path = DemoApp;
 			sourceTree = "<group>";
 		};
-		9274D15129CC876D004525FF /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				9274D16C29CC89C1004525FF /* Entity */,
-				9274D16B29CC89B7004525FF /* Container */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		9274D15229CC8773004525FF /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				9274D16629CC88C1004525FF /* CourseRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		9274D15329CC877E004525FF /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				9274D16429CC88AA004525FF /* CoureService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		9274D15429CC8789004525FF /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				9274D15829CC87C7004525FF /* Course */,
+				92DA63A929E05F9400F2059C /* Routes */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -145,28 +110,40 @@
 			path = Asset;
 			sourceTree = "<group>";
 		};
-		9274D15829CC87C7004525FF /* Course */ = {
+		92DA63A929E05F9400F2059C /* Routes */ = {
 			isa = PBXGroup;
 			children = (
-				9274D14129CC8749004525FF /* ViewController.swift */,
+				92DA63AD29E061B600F2059C /* View */,
 			);
-			path = Course;
+			path = Routes;
 			sourceTree = "<group>";
 		};
-		9274D16B29CC89B7004525FF /* Container */ = {
+		92DA63AA29E05F9B00F2059C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				9274D16F29CC8A80004525FF /* ShareContainer.swift */,
 			);
-			path = Container;
+			path = Domain;
 			sourceTree = "<group>";
 		};
-		9274D16C29CC89C1004525FF /* Entity */ = {
+		92DA63AB29E05FAE00F2059C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				9274D16D29CC8A48004525FF /* CourseItem_API.swift */,
 			);
-			path = Entity;
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		92DA63AC29E05FB800F2059C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		92DA63AD29E061B600F2059C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,12 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9274D16E29CC8A48004525FF /* CourseItem_API.swift in Sources */,
-				9274D16529CC88AA004525FF /* CoureService.swift in Sources */,
-				9274D14229CC8749004525FF /* ViewController.swift in Sources */,
 				9274D13E29CC8749004525FF /* AppDelegate.swift in Sources */,
-				9274D16729CC88C1004525FF /* CourseRepository.swift in Sources */,
-				9274D17029CC8A80004525FF /* ShareContainer.swift in Sources */,
 				9274D14029CC8749004525FF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
